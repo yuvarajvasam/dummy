@@ -2,87 +2,108 @@
 import HomeLayout from '../layouts/HomeLayout.astro';
 ---
 
-<HomeLayout title="Switch-Lit - Home">
+<HomeLayout title="Yuvi - Portfolio">
   <section class="hero">
     <div class="container">
-      <h1>SWITCH‑LIT</h1>
-      <p class="tagline">Collaborative Stories for the Collective Imagination</p>
+      <div class="hero-top-accent">F &nbsp; O &nbsp; R &nbsp; T &nbsp; F &nbsp; O &nbsp; L &nbsp; I &nbsp; O</div>
+      <h1 class="hero-title">Y &nbsp; U &nbsp; V &nbsp; I</h1>
+      <p class="tagline">Creative Web Developer & Interface Architect</p>
       <p class="description">
-        A creative writing platform designed for turn-based collaborative fiction, poetry, and prose. 
-        Each work becomes an imaginative conversation between any two creative writers.
+        Crafting exceptional web applications, digital layouts, and interactive experiences 
+        using modern frontends. Bridging the gap between fine art and technical engineering.
       </p>
       <div class="cta-buttons">
-        <a href="/start-a-story" class="btn btn-primary">Start a Story</a>
-        <a href="/library" class="btn btn-secondary">Browse Library</a>
+        <a href="/start-a-story" class="btn btn-primary">Start a Project</a>
+        <a href="/library" class="btn btn-secondary">Browse Work</a>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section welcome-section">
     <div class="container">
-      <h2>Welcome to Switch-Lit.</h2>
-      <p>
-        We're thrilled to meet you here – at the beginning of an extraordinary journey into 
-        the evolution of collaborative fiction as a catalytic structure for our time.
-      </p>
-      <p>
-        Our mission is universal: to manifest the collective imagination of creative writers 
-        and literary artists through the connective power of collaborative fiction, poetry, and prose.
-      </p>
-      <p>
-        We envision Switch-Lit as an infinite space in a remote corner of the Internet where 
-        the forces of your imagination can freely meet and connect with other writers towards 
-        the creation of new worlds, unimaginable by a single mind.
-      </p>
+      <div class="welcome-box">
+        <h2>Welcome to my space.</h2>
+        <p class="emphasis-text">
+          I'm thrilled to meet you here – at the beginning of an extraordinary journey into 
+          the evolution of interactive web development as a catalytic structure for our time.
+        </p>
+        <p>
+          <strong>My mission is universal:</strong> to manifest the collective imagination of brands, 
+          creatives, and businesses through the connective power of premium code, design systems, and responsive layouts.
+        </p>
+        <p>
+          I envision web development as an infinite space where the forces of imagination 
+          and structural engineering meet to create new digital experiences, previously unimagined.
+        </p>
+      </div>
     </div>
   </section>
 
-  <section class="section section-alt">
+  <section class="section section-alt featured-section">
     <div class="container">
-      <h2>Featured Stories</h2>
+      <h2>Featured Work</h2>
+      <p class="section-subtitle">A curated selection of core projects built with precision, performance, and rich aesthetics.</p>
       <div class="featured-grid">
-        <article class="story-card">
-          <h3>cupid's arrow hit us perfect</h3>
-          <p class="authors">written by: ... and AULANDC©</p>
+        <article class="project-card card-1">
+          <div class="card-gradient"></div>
+          <div class="card-details">
+            <h3>Subrosa Fiction Platform</h3>
+            <p class="meta">role: Lead Engineer & Designer</p>
+          </div>
         </article>
-        <article class="story-card">
-          <h3>Grievances</h3>
-          <p class="authors">written by AYUSHAM TONI© and EMILY CHERCHILL©</p>
+        <article class="project-card card-2">
+          <div class="card-gradient"></div>
+          <div class="card-details">
+            <h3>Aura Music Synthesizer</h3>
+            <p class="meta">role: Frontend Developer</p>
+          </div>
         </article>
-        <article class="story-card">
-          <h3>Infinity</h3>
-          <p class="authors">written by ZIN© and MIAO©</p>
+        <article class="project-card card-3">
+          <div class="card-gradient"></div>
+          <div class="card-details">
+            <h3>Satori Headless Engine</h3>
+            <p class="meta">role: Systems Architect</p>
+          </div>
         </article>
-        <article class="story-card">
-          <h3>Haunting from the Shadows</h3>
-          <p class="authors">written by KAIN© and ZIN©</p>
+        <article class="project-card card-4">
+          <div class="card-gradient"></div>
+          <div class="card-details">
+            <h3>Elysium Design System</h3>
+            <p class="meta">role: UI/UX & CSS Specialist</p>
+          </div>
         </article>
-        <article class="story-card">
-          <h3>Temporary Diversion</h3>
-          <p class="authors">written by JULIA GARIE© and INSPOIS©</p>
+        <article class="project-card card-5">
+          <div class="card-gradient"></div>
+          <div class="card-details">
+            <h3>Switch-Lit Portal</h3>
+            <p class="meta">role: Full-Stack Developer</p>
+          </div>
         </article>
       </div>
       <div class="view-all">
-        <a href="/library" class="btn btn-secondary">View All Stories</a>
+        <a href="/library" class="btn btn-secondary">View Complete Archives</a>
       </div>
     </div>
   </section>
 
-  <section class="section">
+  <section class="section workflow-section">
     <div class="container">
-      <h2>How It Works</h2>
+      <h2>Workflow & Approach</h2>
       <div class="steps-grid">
         <div class="step">
-          <h3>1. Start a Story</h3>
-          <p>Begin your collaborative journey by setting up your story parameters and inviting a writing partner.</p>
+          <div class="step-num">01</div>
+          <h3>Plan & Consult</h3>
+          <p>We align on requirements, draw inspiration from clean typography, and establish a bulletproof UX wireframe.</p>
         </div>
         <div class="step">
-          <h3>2. Take Turns</h3>
-          <p>Alternate chapters with your partner, each building upon the other's creative vision.</p>
+          <div class="step-num">02</div>
+          <h3>Iterate & Build</h3>
+          <p>Developing modular code using solid frameworks (like Astro & React) with optimized, performant CSS styling.</p>
         </div>
         <div class="step">
-          <h3>3. Publish</h3>
-          <p>Share your completed collaborative work in our public library for others to discover.</p>
+          <div class="step-num">03</div>
+          <h3>Deploy & Scale</h3>
+          <p>Delivering lightning-fast scores, SEO optimization, and seamless deployment workflows to launch the project.</p>
         </div>
       </div>
     </div>
@@ -91,30 +112,49 @@ import HomeLayout from '../layouts/HomeLayout.astro';
 
 <style>
   .hero {
-    padding: calc(var(--spacing-xl) * 2) 0;
+    padding: calc(var(--spacing-xl) * 2.2) 0;
     text-align: center;
-    background: linear-gradient(135deg, rgba(26, 26, 26, 0.05) 0%, rgba(245, 245, 245, 0.5) 100%);
+    border-bottom: 1px solid var(--color-border);
   }
 
-  .hero h1 {
-    font-size: 3.5rem;
+  .hero-top-accent {
+    font-family: var(--font-sans);
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.25em;
+    color: var(--color-muted);
+    margin-bottom: var(--spacing-sm);
+    text-transform: uppercase;
+  }
+
+  .hero-title {
+    font-family: var(--font-serif);
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1;
     margin-bottom: var(--spacing-md);
-    letter-spacing: -0.02em;
+    color: var(--color-text);
   }
 
   .hero .tagline {
-    font-size: 1.5rem;
-    color: var(--color-muted);
+    font-family: var(--font-sans);
+    font-size: 1.15rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--color-accent);
     margin-bottom: var(--spacing-md);
   }
 
   .hero .description {
-    font-size: 1.125rem;
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
     color: var(--color-muted);
-    margin-bottom: var(--spacing-lg);
-    max-width: 700px;
+    margin-bottom: var(--spacing-xl);
+    max-width: 680px;
     margin-left: auto;
     margin-right: auto;
+    line-height: 1.7;
   }
 
   .cta-buttons {
@@ -126,90 +166,181 @@ import HomeLayout from '../layouts/HomeLayout.astro';
 
   .section {
     padding: var(--spacing-xxl) 0;
+    border-bottom: 1px solid var(--color-border);
   }
 
   .section-alt {
     background-color: var(--color-secondary);
   }
 
-  .section h2 {
-    text-align: center;
-    margin-bottom: var(--spacing-xl);
+  .welcome-section {
+    background-color: var(--color-bg);
   }
 
-  .section p {
+  .welcome-box {
     max-width: 800px;
-    margin: 0 auto var(--spacing-md);
-    color: var(--color-muted);
-    text-align: center;
+    margin: 0 auto;
   }
 
+  .welcome-box h2 {
+    font-size: 2.2rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .emphasis-text {
+    font-size: 1.35rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .welcome-box p {
+    color: var(--color-muted);
+    font-size: 1.125rem;
+    margin-bottom: var(--spacing-md);
+    line-height: 1.7;
+  }
+
+  .featured-section h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .section-subtitle {
+    text-align: center;
+    color: var(--color-muted);
+    max-width: 600px;
+    margin: 0 auto var(--spacing-xl);
+  }
+
+  /* Carousel-like grid */
   .featured-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-lg);
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: var(--spacing-md);
     margin-bottom: var(--spacing-xl);
   }
 
-  .story-card {
+  .project-card {
     background: var(--color-bg);
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius-md);
-    padding: var(--spacing-lg);
-    transition: transform 0.2s ease;
+    overflow: hidden;
+    height: 320px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
   }
 
-  .story-card:hover {
-    transform: translateY(-4px);
+  .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.04);
   }
 
-  .story-card h3 {
-    font-style: italic;
-    margin-bottom: var(--spacing-sm);
-    font-size: 1.125rem;
+  .card-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
   }
 
-  .story-card .authors {
-    color: var(--color-muted);
-    font-size: 0.875rem;
+  .project-card:hover .card-gradient {
+    opacity: 0.95;
+  }
+
+  /* Vibrant pastels / grains */
+  .card-1 .card-gradient { background: linear-gradient(135deg, #E67E65 0%, #F5C6A5 100%); }
+  .card-2 .card-gradient { background: linear-gradient(135deg, #B2ACF2 0%, #D4E1F9 100%); }
+  .card-3 .card-gradient { background: linear-gradient(135deg, #4A7A5D 0%, #A2C293 100%); }
+  .card-4 .card-gradient { background: linear-gradient(135deg, #E377C2 0%, #9F5AD2 100%); }
+  .card-5 .card-gradient { background: linear-gradient(135deg, #E3C154 0%, #FFFDF5 100%); }
+
+  .card-details {
+    position: relative;
+    padding: var(--spacing-md);
+    background: linear-gradient(to top, rgba(20, 19, 18, 0.85) 0%, rgba(20, 19, 18, 0) 100%);
+    color: #ffffff;
+    width: 100%;
+  }
+
+  .card-details h3 {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #ffffff;
+  }
+
+  .card-details .meta {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0;
   }
 
   .view-all {
     text-align: center;
   }
 
+  .workflow-section h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+  }
+
   .steps-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: var(--spacing-xl);
-    margin-top: var(--spacing-xl);
   }
 
   .step {
-    text-align: center;
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
+  }
+
+  .step-num {
+    font-family: var(--font-mono);
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--color-accent);
+    margin-bottom: var(--spacing-xs);
+    border-bottom: 1px solid var(--color-border);
+    display: inline-block;
+    padding-bottom: 4px;
   }
 
   .step h3 {
-    margin-bottom: var(--spacing-sm);
+    margin-top: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.25rem;
   }
 
   .step p {
     color: var(--color-muted);
     font-size: 1rem;
+    line-height: 1.6;
   }
 
   @media (max-width: 768px) {
-    .hero h1 {
-      font-size: 2.5rem;
+    .hero-title {
+      font-size: 3.5rem;
     }
 
     .hero .tagline {
-      font-size: 1.25rem;
+      font-size: 1rem;
     }
 
     .section h2 {
-      font-size: 1.5rem;
+      font-size: 1.75rem;
+    }
+
+    .featured-grid {
+      grid-template-columns: 1fr;
     }
   }
 </style>

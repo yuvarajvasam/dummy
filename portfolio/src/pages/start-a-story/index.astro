@@ -2,183 +2,266 @@
 import HomeLayout from '../../layouts/HomeLayout.astro';
 ---
 
-<HomeLayout title="Start a Story - Switch-Lit">
-  <section class="page-header">
-    <div class="container">
-      <h1>START A NEW STORY</h1>
-      <p class="subhead">Choose from the app settings below to customize the shape of your turn‑based collaborative story</p>
-    </div>
-  </section>
+<HomeLayout title="Start a Project - Yuvi">
+  <section class="planner-section">
+    <div class="container split-container">
+      
+      <!-- Left Column: Title and SVG Illustration -->
+      <div class="sidebar-col">
+        <h1 class="vertical-title">
+          <span>START</span>
+          <span>A</span>
+          <span>NEW</span>
+          <span>PROJECT</span>
+        </h1>
+        
+        <div class="illustration-wrapper">
+          <svg viewBox="0 0 240 380" fill="none" xmlns="http://www.w3.org/2000/svg" class="start-project-svg">
+            <!-- Yellow T-arch top block -->
+            <path d="M30 60 h180 v50 h-55 v60 h-70 v-60 h-55 z" fill="#E0C055" stroke="#1C1B19" stroke-width="3.5"/>
+            <!-- Bottom line of yellow arch -->
+            <path d="M30 110 h55 v60 h70 v-60 h55" fill="none" stroke="#1C1B19" stroke-width="3.5"/>
+            <ellipse cx="120" cy="180" rx="8" ry="8" fill="#1C1B19"/>
+            
+            <!-- Isometric Green Cube -->
+            <g transform="translate(100 200)">
+              <!-- Top Face -->
+              <path d="M20 0 L40 12 L20 24 L0 12 Z" fill="#5DAE81" stroke="#1C1B19" stroke-width="3.5"/>
+              <!-- Left Face -->
+              <path d="M0 12 L20 24 V44 L0 32 Z" fill="#3B93A7" stroke="#1C1B19" stroke-width="3.5"/>
+              <!-- Right Face -->
+              <path d="M20 24 L40 12 V32 L20 44 Z" fill="#2E5E6B" stroke="#1C1B19" stroke-width="3.5"/>
+            </g>
 
-  <section class="form-section">
-    <div class="container">
-      <form class="story-form" id="storyForm">
-        <div class="form-group">
-          <label>Writing Partner</label>
-          <p class="question">Do you already have a writing partner?</p>
-          <div class="pill-toggle">
-            <button type="button" class="active" data-value="yes">Yes</button>
-            <button type="button" data-value="no">No</button>
-          </div>
-          <div class="conditional-field" id="partnerEmailField">
-            <label for="partnerEmail">Invite your writing partner</label>
-            <input type="email" id="partnerEmail" placeholder="Email address" />
-          </div>
+            <!-- Red base block -->
+            <path d="M80 300 C80 290 90 280 100 280 h40 c10 0 20 10 20 20 v50 H80 V300 Z" fill="#D65E4E" stroke="#1C1B19" stroke-width="3.5"/>
+            <line x1="80" y1="310" x2="160" y2="310" stroke="#1C1B19" stroke-width="3.5"/>
+            
+            <!-- Floor Shadow -->
+            <ellipse cx="120" cy="358" rx="75" ry="12" fill="#1C1B19" fill-opacity="0.15"/>
+          </svg>
         </div>
+      </div>
 
-        <div class="form-group">
-          <label>Story Prompt (optional)</label>
-          <div class="checkbox-wrapper">
-            <input type="checkbox" id="noPrompt" checked />
-            <label for="noPrompt">No prompt</label>
+      <!-- Right Column: Interactive Multi-Step Form -->
+      <div class="form-col">
+        <p class="intro-lead">
+          Choose from the project settings below to customize the scope, timeline, and tech stack for our collaboration.
+        </p>
+
+        <form class="story-form" id="projectForm" onsubmit="event.preventDefault(); alert('Brief submitted successfully! I will contact you shortly.');">
+          
+          <!-- Step 1: Project Type -->
+          <div class="form-group">
+            <div class="step-badge">1</div>
+            <label>Project Type</label>
+            <p class="question">What are we building together?</p>
+            <div class="pill-toggle" id="projectTypeToggle">
+              <button type="button" class="active" data-value="fullstack">Full-Stack App</button>
+              <button type="button" data-value="design">UX/UI Design</button>
+              <button type="button" data-value="frontend">Frontend Only</button>
+            </div>
+            
+            <div class="conditional-field" id="techPreferenceField">
+              <label for="techPreference">Any preferred frameworks?</label>
+              <input type="text" id="techPreference" placeholder="e.g. Astro, React, Svelte" />
+            </div>
           </div>
-        </div>
 
-        <div class="form-group">
-          <label>Story Settings</label>
-          <div class="settings-grid">
-            <div class="field">
-              <label for="chaptersPerWriter">Chapters per writer</label>
-              <input type="number" id="chaptersPerWriter" min="1" value="1" />
-            </div>
-            <div class="field">
-              <label for="wordLimit">Word limit per chapter</label>
-              <input type="number" id="wordLimit" min="100" value="200" />
-            </div>
-            <div class="field">
-              <label for="timeLimit">Time limit per chapter (days)</label>
-              <select id="timeLimit">
-                <option value="3">3 days</option>
-                <option value="5">5 days</option>
-                <option value="7" selected>7 days</option>
-                <option value="14">14 days</option>
-                <option value="30">30 days</option>
-              </select>
-            </div>
-            <div class="field">
-              <label>Who writes the first chapter?</label>
-              <div class="pill-toggle">
-                <button type="button" data-value="partner">My partner</button>
-                <button type="button" class="active" data-value="me">Me!</button>
+          <!-- Step 2: Budget Scope -->
+          <div class="form-group">
+            <div class="step-badge">2</div>
+            <label>Budget Scope (Optional)</label>
+            <div class="budget-selection">
+              <div class="pill-toggle" id="budgetToggle">
+                <button type="button" class="active" data-value="small">$5K – $10K</button>
+                <button type="button" data-value="medium">$10K – $25K</button>
+                <button type="button" data-value="large">$25K+</button>
               </div>
             </div>
           </div>
-        </div>
 
-        <div class="form-group proposal-review">
-          <label>Proposal Review</label>
-          <p class="message">Please log in or create an account in order to send your story proposal to your writing partner (:</p>
-          <div class="actions">
-            <a href="/signup" class="btn btn-primary">Sign up</a>
-            <a href="/login" class="btn btn-secondary">Log in</a>
+          <!-- Step 3: Project Timeline -->
+          <div class="form-group">
+            <div class="step-badge">3</div>
+            <label>Project Timeline & Scope</label>
+            <div class="settings-grid">
+              <div class="field">
+                <label for="pagesCount">Approximate Pages / Views</label>
+                <input type="number" id="pagesCount" min="1" max="50" value="5" />
+              </div>
+              <div class="field">
+                <label for="deliveryTime">Delivery Timeline</label>
+                <select id="deliveryTime">
+                  <option value="2">2-4 Weeks (Fast-track)</option>
+                  <option value="4" selected>1-2 Months (Standard)</option>
+                  <option value="8">3+ Months (Retainer/Large-scale)</option>
+                </select>
+              </div>
+              <div class="field">
+                <label>Preferred Communication</label>
+                <div class="pill-toggle" id="commToggle">
+                  <button type="button" class="active" data-value="async">Async (Slack/Email)</button>
+                  <button type="button" data-value="weekly">Weekly Calls</button>
+                </div>
+              </div>
+            </div>
           </div>
-        </div>
-      </form>
+
+          <!-- Step 4: Submission Brief -->
+          <div class="form-group proposal-review">
+            <div class="step-badge">4</div>
+            <label>Proposal Review</label>
+            <p class="message">Provide your details to submit your project brief and schedule our kickoff call.</p>
+            <div class="contact-inputs">
+              <input type="email" id="contactEmail" placeholder="Your Email Address" required style="margin-bottom: 12px; display: block; width: 100%;" />
+              <textarea id="projectDetails" placeholder="Tell me a bit about your project goals..." rows="4" style="width: 100%; padding: 12px; border: 1px solid var(--color-border); border-radius: var(--border-radius-sm); font-family: var(--font-sans); background: var(--color-bg); margin-bottom: 20px;"></textarea>
+            </div>
+            <div class="actions">
+              <button type="submit" class="btn btn-primary" style="width: 100%; max-width: 300px;">Send Brief Request</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
     </div>
   </section>
 </HomeLayout>
 
 <script>
-  // Writing partner toggle
-  const partnerButtons = document.querySelectorAll('.pill-toggle button');
-  partnerButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const parent = btn.parentElement;
-      parent.querySelectorAll('button').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-      
-      if (parent.querySelector('[data-value="yes"]') && btn.dataset.value === 'no') {
-        document.getElementById('partnerEmailField').style.display = 'none';
-      } else if (parent.querySelector('[data-value="yes"]') && btn.dataset.value === 'yes') {
-        document.getElementById('partnerEmailField').style.display = 'block';
-      }
+  // Simple interactive toggles
+  const setupToggle = (containerId) => {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    const buttons = container.querySelectorAll('button');
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        
+        // Hide tech field if selecting pure design
+        if (containerId === 'projectTypeToggle') {
+          const techField = document.getElementById('techPreferenceField');
+          if (btn.dataset.value === 'design') {
+            techField.style.display = 'none';
+          } else {
+            techField.style.display = 'block';
+          }
+        }
+      });
     });
-  });
+  };
 
-  // First chapter toggle
-  const firstChapterButtons = document.querySelectorAll('.pill-toggle:nth-of-type(2) button');
-  firstChapterButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      const parent = btn.parentElement;
-      parent.querySelectorAll('button').forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    });
-  });
+  setupToggle('projectTypeToggle');
+  setupToggle('budgetToggle');
+  setupToggle('commToggle');
 </script>
 
 <style>
-  .page-header {
-    padding: var(--spacing-xxl) 0 var(--spacing-xl);
+  .planner-section {
+    padding: var(--spacing-xxl) 0;
   }
 
-  .page-header h1 {
-    margin-bottom: var(--spacing-sm);
+  .split-container {
+    display: grid;
+    grid-template-columns: 0.8fr 1.2fr;
+    gap: var(--spacing-xxl);
   }
 
-  .subhead {
+  /* Left column */
+  .sidebar-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .vertical-title {
+    font-family: var(--font-serif);
+    font-size: 3.5rem;
+    font-weight: 800;
+    line-height: 0.9;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: var(--spacing-xl);
+    letter-spacing: -0.03em;
+  }
+
+  .vertical-title span {
+    display: block;
+  }
+
+  .illustration-wrapper {
+    width: 100%;
+    max-width: 240px;
+    margin-top: auto;
+  }
+
+  .start-project-svg {
+    width: 100%;
+    height: auto;
+  }
+
+  /* Right column */
+  .intro-lead {
+    font-family: var(--font-serif);
+    font-size: 1.3rem;
+    line-height: 1.6;
     color: var(--color-muted);
-    font-size: 1.125rem;
-    max-width: 700px;
-  }
-
-  .form-section {
-    padding: 0 0 var(--spacing-xxl);
+    margin-bottom: var(--spacing-xl);
+    max-width: 600px;
   }
 
   .story-form {
-    max-width: 700px;
+    max-width: 650px;
   }
 
   .form-group {
+    position: relative;
     margin-bottom: var(--spacing-xl);
+    padding-left: var(--spacing-xl);
     padding-bottom: var(--spacing-xl);
     border-bottom: 1px solid var(--color-border);
   }
 
   .form-group:last-of-type {
     border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  .step-badge {
+    position: absolute;
+    left: -10px;
+    top: 0;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    font-weight: 700;
   }
 
   .form-group > label {
-    margin-bottom: var(--spacing-md);
+    margin-bottom: var(--spacing-sm);
     display: block;
+    color: var(--color-accent);
   }
 
   .question {
     margin-bottom: var(--spacing-sm);
-    font-size: 1rem;
+    font-family: var(--font-serif);
+    font-size: 1.25rem;
+    font-weight: 600;
     color: var(--color-text);
   }
 
   .pill-toggle {
-    display: inline-flex;
     margin-bottom: var(--spacing-md);
-  }
-
-  .pill-toggle button {
-    padding: 8px 20px;
-    background: white;
-    color: var(--color-muted);
-    border: 1px solid var(--color-border);
-    border-right: none;
-    cursor: pointer;
-    font-weight: 500;
-    transition: all 0.2s ease;
-  }
-
-  .pill-toggle button:first-child {
-    border-radius: 20px 0 0 20px;
-  }
-
-  .pill-toggle button:last-child {
-    border-radius: 0 20px 20px 0;
-    border-right: 1px solid var(--color-border);
-  }
-
-  .pill-toggle button.active {
-    background: var(--color-primary);
-    color: white;
-    border-color: var(--color-primary);
   }
 
   .conditional-field {
@@ -186,38 +269,25 @@ import HomeLayout from '../../layouts/HomeLayout.astro';
   }
 
   .conditional-field label {
-    font-size: 0.875rem;
-    font-weight: 500;
+    font-size: 0.85rem;
     color: var(--color-muted);
-    margin-bottom: var(--spacing-xs);
-  }
-
-  .checkbox-wrapper {
-    display: flex;
-    align-items: center;
-    gap: var(--spacing-sm);
-  }
-
-  .checkbox-wrapper input[type="checkbox"] {
-    width: auto;
-    max-width: none;
   }
 
   .settings-grid {
     display: grid;
-    gap: var(--spacing-lg);
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
   }
 
   .field label {
-    font-size: 0.875rem;
-    font-weight: 500;
+    font-size: 0.85rem;
     color: var(--color-muted);
-    margin-bottom: var(--spacing-xs);
-    display: block;
   }
 
   .proposal-review .message {
+    font-family: var(--font-serif);
     color: var(--color-muted);
+    font-size: 1.1rem;
     margin-bottom: var(--spacing-md);
   }
 
@@ -226,18 +296,30 @@ import HomeLayout from '../../layouts/HomeLayout.astro';
     gap: var(--spacing-md);
   }
 
-  @media (max-width: 768px) {
-    .settings-grid {
+  @media (max-width: 900px) {
+    .split-container {
       grid-template-columns: 1fr;
+      gap: var(--spacing-xl);
     }
 
-    .actions {
-      flex-direction: column;
+    .sidebar-col {
+      align-items: center;
     }
 
-    .actions .btn {
-      width: 100%;
+    .vertical-title {
+      flex-direction: row;
+      gap: var(--spacing-xs);
+      font-size: 2.2rem;
       text-align: center;
+      margin-bottom: var(--spacing-md);
+    }
+
+    .vertical-title span {
+      display: inline;
+    }
+
+    .illustration-wrapper {
+      max-width: 180px;
     }
   }
 </style>

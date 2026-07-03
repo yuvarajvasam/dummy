@@ -2,37 +2,91 @@
 import HomeLayout from '../../layouts/HomeLayout.astro';
 ---
 
-<HomeLayout title="Library - Switch-Lit">
+<HomeLayout title="Projects - Yuvi">
   <section class="page-header">
-    <div class="container">
-      <h1>SWITCH-LIT LIBRARY</h1>
-      <p class="subhead">Welcome to our public library of the collective imagination.</p>
+    <div class="container header-content">
+      <div class="illustration-wrapper">
+        <!-- Embedded SVG representing the Stack of Books (Library illustration) -->
+        <svg viewBox="0 0 450 150" fill="none" xmlns="http://www.w3.org/2000/svg" class="library-svg">
+          <!-- Spines on left side -->
+          <rect x="40" y="40" width="18" height="80" rx="2" fill="#3B93A7" stroke="#1C1B19" stroke-width="3"/>
+          <line x1="49" y1="50" x2="49" y2="110" stroke="#1C1B19" stroke-width="1.5"/>
+
+          <rect x="63" y="25" width="22" height="95" rx="2" fill="#B788AA" stroke="#1C1B19" stroke-width="3"/>
+          <circle cx="74" cy="45" r="4" fill="#1C1B19"/>
+
+          <rect x="90" y="45" width="16" height="75" rx="2" fill="#E0C055" stroke="#1C1B19" stroke-width="3"/>
+
+          <!-- Tilted books -->
+          <g transform="rotate(12 130 80)">
+            <rect x="110" y="20" width="20" height="90" rx="2" fill="#D65E4E" stroke="#1C1B19" stroke-width="3"/>
+            <line x1="110" y1="35" x2="130" y2="35" stroke="#1C1B19" stroke-width="2"/>
+            <line x1="110" y1="95" x2="130" y2="95" stroke="#1C1B19" stroke-width="2"/>
+          </g>
+          
+          <g transform="rotate(22 160 90)">
+            <rect x="140" y="20" width="22" height="88" rx="2" fill="#4178BE" stroke="#1C1B19" stroke-width="3"/>
+          </g>
+
+          <!-- Central Open Book -->
+          <path d="M195 105 C215 90 235 90 250 102 C265 90 285 90 305 105 V45 C285 30 265 30 250 42 C235 30 215 30 195 45 Z" fill="#FFFDF9" stroke="#1C1B19" stroke-width="3"/>
+          <path d="M250 42 V102" stroke="#1C1B19" stroke-width="2"/>
+          <line x1="208" y1="58" x2="238" y2="52" stroke="#E3DDD3" stroke-width="1.5"/>
+          <line x1="208" y1="72" x2="238" y2="66" stroke="#E3DDD3" stroke-width="1.5"/>
+          <line x1="208" y1="86" x2="238" y2="80" stroke="#E3DDD3" stroke-width="1.5"/>
+          <line x1="262" y1="52" x2="292" y2="58" stroke="#E3DDD3" stroke-width="1.5"/>
+          <line x1="262" y1="66" x2="292" y2="72" stroke="#E3DDD3" stroke-width="1.5"/>
+          <line x1="262" y1="80" x2="292" y2="86" stroke="#E3DDD3" stroke-width="1.5"/>
+
+          <!-- Spines on right side -->
+          <rect x="330" y="35" width="20" height="85" rx="2" fill="#5DAE81" stroke="#1C1B19" stroke-width="3"/>
+          <rect x="355" y="20" width="24" height="100" rx="2" fill="#FAF7F0" stroke="#1C1B19" stroke-width="3"/>
+          <line x1="355" y1="35" x2="379" y2="35" stroke="#1C1B19" stroke-width="2"/>
+        </svg>
+      </div>
+      <h1>PROJECTS ARCHIVE</h1>
+      <p class="subhead">A complete record of custom designs, technical builds, and web experiments.</p>
     </div>
   </section>
 
   <section class="featured-section">
     <div class="container">
-      <h2>Featured stories</h2>
+      <h2>Featured Works</h2>
       <div class="featured-grid">
-        <article class="story-card">
-          <h3>cupid's arrow hit us perfect</h3>
-          <p class="authors">written by: ... and AULANDC©</p>
+        <article class="project-card card-1">
+          <div class="card-gradient"></div>
+          <div class="card-details">
+            <h3>Subrosa Fiction Platform</h3>
+            <p class="meta">role: Lead Engineer & Designer</p>
+          </div>
         </article>
-        <article class="story-card">
-          <h3>Grievances</h3>
-          <p class="authors">written by AYUSHAM TONI© and EMILY CHERCHILL©</p>
+        <article class="project-card card-2">
+          <div class="card-gradient"></div>
+          <div class="card-details">
+            <h3>Aura Music Synthesizer</h3>
+            <p class="meta">role: Frontend Developer</p>
+          </div>
         </article>
-        <article class="story-card">
-          <h3>Infinity</h3>
-          <p class="authors">written by ZIN© and MIAO©</p>
+        <article class="project-card card-3">
+          <div class="card-gradient"></div>
+          <div class="card-details">
+            <h3>Satori Headless Engine</h3>
+            <p class="meta">role: Systems Architect</p>
+          </div>
         </article>
-        <article class="story-card">
-          <h3>Haunting from the Shadows</h3>
-          <p class="authors">written by KAIN© and ZIN©</p>
+        <article class="project-card card-4">
+          <div class="card-gradient"></div>
+          <div class="card-details">
+            <h3>Elysium Design System</h3>
+            <p class="meta">role: UI/UX & CSS Specialist</p>
+          </div>
         </article>
-        <article class="story-card">
-          <h3>Temporary Diversion</h3>
-          <p class="authors">written by JULIA GARIE© and INSPOIS©</p>
+        <article class="project-card card-5">
+          <div class="card-gradient"></div>
+          <div class="card-details">
+            <h3>Switch-Lit Portal</h3>
+            <p class="meta">role: Full-Stack Developer</p>
+          </div>
         </article>
       </div>
     </div>
@@ -41,42 +95,72 @@ import HomeLayout from '../../layouts/HomeLayout.astro';
   <section class="table-section">
     <div class="container">
       <div class="sort-controls">
-        <span>Sort by:</span>
+        <span>Sort Projects by:</span>
         <div class="sort-options">
-          <button class="active" data-sort="recent">Most recent</button>
-          <button data-sort="wordcount">Word count</button>
+          <button class="active" id="sortByYear">Release Date</button>
+          <button id="sortByTitle">Title Alphabetical</button>
         </div>
       </div>
 
       <div class="table-wrapper">
-        <table class="stories-table">
+        <table class="stories-table" id="projectsTable">
           <thead>
             <tr>
-              <th>Authors</th>
-              <th>Title</th>
-              <th>Word Count</th>
-              <th>Release Date</th>
+              <th style="width: 120px;">Category</th>
+              <th>Project Title</th>
+              <th>Tech Stack / Role</th>
+              <th style="width: 100px;">Year</th>
             </tr>
           </thead>
           <tbody>
-            <tr><td>○○</td><td>Under His Spell</td><td>5049</td><td>2026-06-24</td></tr>
-            <tr><td>●</td><td>Fuschia Aftermath</td><td>1190</td><td>2026-06-13</td></tr>
-            <tr><td>●</td><td>Before He Wakes</td><td>1179</td><td>2026-06-13</td></tr>
-            <tr><td>●</td><td>cupid's arrow hit us perfect</td><td>1704</td><td>2026-05-17</td></tr>
-            <tr><td>○●</td><td>Waffles, Chips & Other Robbery Necessities</td><td>983</td><td>2026-05-17</td></tr>
-            <tr><td>●</td><td>Moving In</td><td>566</td><td>2026-05-17</td></tr>
-            <tr><td>○●</td><td>Hunger</td><td>1081</td><td>2026-05-17</td></tr>
-            <tr><td>○○</td><td>Along the Rainy Avenue</td><td>596</td><td>2026-05-17</td></tr>
-            <tr><td>●</td><td>A Monument to Silence</td><td>2394</td><td>2026-05-17</td></tr>
-            <tr><td>○○</td><td>A Case for Dancing</td><td>591</td><td>2026-05-17</td></tr>
-            <tr><td>○○</td><td>The Hum in the Hollow</td><td>2800</td><td>2026-04-23</td></tr>
-            <tr><td>○○</td><td>Yearning Over Us</td><td>528</td><td>2026-04-23</td></tr>
-            <tr><td>●</td><td>Haunting from the Shadows</td><td>1223</td><td>2026-04-23</td></tr>
-            <tr><td>●</td><td>Bones in the Ocean</td><td>2698</td><td>2026-04-23</td></tr>
-            <tr><td>○○</td><td>Grievances</td><td>4130</td><td>2026-04-23</td></tr>
-            <tr><td>○○</td><td>Infinity</td><td>1657</td><td>2026-04-23</td></tr>
-            <tr><td>○○</td><td>Temporary Diversion</td><td>1190</td><td>2026-03-30</td></tr>
-            <tr><td>○○</td><td>Compliance Check</td><td>1199</td><td>2026-01-16</td></tr>
+            <tr data-year="2026" data-title="Subrosa Fiction Platform">
+              <td><span class="category-dot dot-teal"></span></td>
+              <td><strong><a href="#">Subrosa Fiction Platform</a></strong></td>
+              <td>React, Astro, Tail-based collab workspace</td>
+              <td>2026</td>
+            </tr>
+            <tr data-year="2026" data-title="Aura Music Synthesizer">
+              <td><span class="category-dot dot-purple"></span></td>
+              <td><strong><a href="#">Aura Music Synthesizer</a></strong></td>
+              <td>Web Audio API, Svelte, Tailwind CSS</td>
+              <td>2026</td>
+            </tr>
+            <tr data-year="2025" data-title="Satori Headless Engine">
+              <td><span class="category-dot dot-yellow"></span></td>
+              <td><strong><a href="#">Satori Headless Engine</a></strong></td>
+              <td>Astro Content Layer, TypeScript API, Node</td>
+              <td>2025</td>
+            </tr>
+            <tr data-year="2025" data-title="Elysium Design System">
+              <td><span class="category-dot dot-coral"></span></td>
+              <td><strong><a href="#">Elysium Design System</a></strong></td>
+              <td>Vanilla CSS, Component Tokens, Storybook</td>
+              <td>2025</td>
+            </tr>
+            <tr data-year="2025" data-title="Switch-Lit Portal">
+              <td><span class="category-dot dot-blue"></span></td>
+              <td><strong><a href="#">Switch-Lit Portal</a></strong></td>
+              <td>Astro JS, MDX, Interactive Forms, CSS</td>
+              <td>2025</td>
+            </tr>
+            <tr data-year="2024" data-title="Helios Weather Station">
+              <td><span class="category-dot dot-green"></span></td>
+              <td><strong><a href="#">Helios Weather Station</a></strong></td>
+              <td>D3.js, SVGs, Leaflet Maps, WebSockets</td>
+              <td>2024</td>
+            </tr>
+            <tr data-year="2024" data-title="Aethelgard Game Client">
+              <td><span class="category-dot dot-teal"></span></td>
+              <td><strong><a href="#">Aethelgard Game Client</a></strong></td>
+              <td>Canvas API, TypeScript, WebAssembly Engine</td>
+              <td>2024</td>
+            </tr>
+            <tr data-year="2023" data-title="Kronecker Grid Analytics">
+              <td><span class="category-dot dot-purple"></span></td>
+              <td><strong><a href="#">Kronecker Grid Analytics</a></strong></td>
+              <td>Python, Django, Pandas, Chart.js Charts</td>
+              <td>2023</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -85,68 +169,146 @@ import HomeLayout from '../../layouts/HomeLayout.astro';
 </HomeLayout>
 
 <script>
-  const sortButtons = document.querySelectorAll('.sort-options button');
-  sortButtons.forEach(btn => {
-    btn.addEventListener('click', () => {
-      sortButtons.forEach(b => b.classList.remove('active'));
-      btn.classList.add('active');
-    });
+  const sortYearBtn = document.getElementById('sortByYear');
+  const sortTitleBtn = document.getElementById('sortByTitle');
+  const tableBody = document.querySelector('#projectsTable tbody');
+
+  const getRows = () => Array.from(tableBody.querySelectorAll('tr'));
+
+  sortYearBtn.addEventListener('click', () => {
+    sortYearBtn.classList.add('active');
+    sortTitleBtn.classList.remove('active');
+    const sorted = getRows().sort((a, b) => b.dataset.year.localeCompare(a.dataset.year));
+    sorted.forEach(row => tableBody.appendChild(row));
+  });
+
+  sortTitleBtn.addEventListener('click', () => {
+    sortTitleBtn.classList.add('active');
+    sortYearBtn.classList.remove('active');
+    const sorted = getRows().sort((a, b) => a.dataset.title.localeCompare(b.dataset.title));
+    sorted.forEach(row => tableBody.appendChild(row));
   });
 </script>
 
 <style>
   .page-header {
     padding: var(--spacing-xxl) 0 var(--spacing-xl);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .header-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .illustration-wrapper {
+    width: 100%;
+    max-width: 450px;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .library-svg {
+    width: 100%;
+    height: auto;
   }
 
   .page-header h1 {
-    margin-bottom: var(--spacing-sm);
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: var(--spacing-xs);
   }
 
   .subhead {
     color: var(--color-muted);
-    font-size: 1.125rem;
+    font-size: 1.15rem;
+    font-family: var(--font-serif);
+    font-style: italic;
   }
 
   .featured-section {
-    padding: 0 0 var(--spacing-xxl);
+    padding: var(--spacing-xl) 0 var(--spacing-xxl);
+    border-bottom: 1px solid var(--color-border);
   }
 
   .featured-section h2 {
+    font-size: 1.75rem;
     margin-bottom: var(--spacing-lg);
   }
 
+  /* Slider grid */
   .featured-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: var(--spacing-lg);
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-md);
   }
 
-  .story-card {
+  .project-card {
     background: var(--color-bg);
     border: 1px solid var(--color-border);
     border-radius: var(--border-radius-md);
-    padding: var(--spacing-lg);
-    transition: transform 0.2s ease;
+    overflow: hidden;
+    height: 280px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
   }
 
-  .story-card:hover {
-    transform: translateY(-4px);
+  .project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.04);
   }
 
-  .story-card h3 {
-    font-style: italic;
-    margin-bottom: var(--spacing-sm);
-    font-size: 1.125rem;
+  .card-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.85;
+    transition: opacity 0.3s ease;
   }
 
-  .story-card .authors {
-    color: var(--color-muted);
-    font-size: 0.875rem;
+  .project-card:hover .card-gradient {
+    opacity: 0.95;
+  }
+
+  /* Colorful card backgrounds */
+  .card-1 .card-gradient { background: linear-gradient(135deg, #E67E65 0%, #F5C6A5 100%); }
+  .card-2 .card-gradient { background: linear-gradient(135deg, #B2ACF2 0%, #D4E1F9 100%); }
+  .card-3 .card-gradient { background: linear-gradient(135deg, #4A7A5D 0%, #A2C293 100%); }
+  .card-4 .card-gradient { background: linear-gradient(135deg, #E377C2 0%, #9F5AD2 100%); }
+  .card-5 .card-gradient { background: linear-gradient(135deg, #E3C154 0%, #FFFDF5 100%); }
+
+  .card-details {
+    position: relative;
+    padding: var(--spacing-md);
+    background: linear-gradient(to top, rgba(20, 19, 18, 0.85) 0%, rgba(20, 19, 18, 0) 100%);
+    color: #ffffff;
+    width: 100%;
+  }
+
+  .card-details h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: #ffffff;
+  }
+
+  .card-details p {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.85);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 0;
   }
 
   .table-section {
-    padding: 0 0 var(--spacing-xxl);
+    padding: var(--spacing-xxl) 0;
   }
 
   .sort-controls {
@@ -154,6 +316,14 @@ import HomeLayout from '../../layouts/HomeLayout.astro';
     align-items: center;
     gap: var(--spacing-md);
     margin-bottom: var(--spacing-lg);
+  }
+
+  .sort-controls span {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: var(--color-muted);
   }
 
   .sort-options {
@@ -165,9 +335,13 @@ import HomeLayout from '../../layouts/HomeLayout.astro';
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 1rem;
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
     color: var(--color-muted);
     padding: 4px 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
   .sort-options button.active {
@@ -182,21 +356,36 @@ import HomeLayout from '../../layouts/HomeLayout.astro';
   .stories-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 1rem;
   }
 
   .stories-table th,
   .stories-table td {
     text-align: left;
-    padding: var(--spacing-sm) var(--spacing-md);
+    padding: var(--spacing-md);
     border-bottom: 1px solid var(--color-border);
   }
 
   .stories-table th {
-    font-weight: 600;
+    font-family: var(--font-sans);
+    font-weight: 700;
     color: var(--color-muted);
-    font-size: 0.875rem;
+    font-size: 0.75rem;
     text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+
+  .stories-table td {
+    font-size: 1rem;
+  }
+
+  .stories-table td strong a {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    color: var(--color-text);
+  }
+
+  .stories-table tbody tr {
+    transition: background-color 0.2s ease;
   }
 
   .stories-table tbody tr:hover {

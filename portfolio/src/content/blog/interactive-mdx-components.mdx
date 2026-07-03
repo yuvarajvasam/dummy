@@ -1,0 +1,40 @@
+---
+title: "Building Interactive Layouts with Astro and MDX"
+description: "Learn how to integrate custom Astro components inside rich editorial MDX layouts to create modern, dynamic documentation."
+pubDate: 2026-07-03
+tags: ["Astro", "MDX", "Design Systems"]
+draft: false
+---
+
+import InteractiveDemo from '../../components/InteractiveDemo.astro';
+
+MDX is a powerful tool for developers and designers alike. It allows you to write standard, readable markdown, while retaining the full power of importing and executing interactive components right inside the copy.
+
+## Why use MDX in a Portfolio?
+
+When writing case studies or technical walkthroughs, traditional markdown can be limiting. You can only use standard HTML elements like paragraphs, headers, and code snippets. With MDX, you can bring your writing to life by embedding:
+- Live calculators
+- Configurable interactive components
+- Animated chart visuals
+- Fully custom interactive layouts
+
+Below is a live preview of the interactive palette component built natively as an Astro component:
+
+<InteractiveDemo />
+
+## How it works under the hood
+
+To parse MDX in Astro, the `@astrojs/mdx` integration compiles MDX markup into standard component templates. You import the component at the top of the MDX file, and place it inline with your markdown content:
+
+```astro
+---
+title: "My MDX Article"
+---
+import CustomComponent from '../components/CustomComponent.astro';
+
+Here is some regular text.
+
+<CustomComponent />
+```
+
+This makes case studies incredibly engaging, allowing clients and hiring managers to interact with live examples of your work directly on the page!

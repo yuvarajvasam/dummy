@@ -1,0 +1,81 @@
+---
+// src/components/InteractiveDemo.astro
+---
+
+<div class="interactive-demo-card">
+  <h4>Live Palette Previewer</h4>
+  <p>Interact with the buttons below to change the accent highlight color of this card dynamically.</p>
+  
+  <div class="demo-box" id="demoBox">
+    <span>Highlight Color</span>
+  </div>
+
+  <div class="color-selectors">
+    <button class="color-btn" type="button" data-color="var(--dot-teal)">Teal</button>
+    <button class="color-btn" type="button" data-color="var(--dot-purple)">Purple</button>
+    <button class="color-btn" type="button" data-color="var(--dot-coral)">Coral</button>
+    <button class="color-btn" type="button" data-color="var(--dot-green)">Green</button>
+  </div>
+</div>
+
+<script>
+  const buttons = document.querySelectorAll('.color-btn');
+  const demoBox = document.getElementById('demoBox');
+
+  buttons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const color = (btn as HTMLButtonElement).dataset.color;
+      if (demoBox && color) {
+        demoBox.style.backgroundColor = color;
+        demoBox.style.color = '#ffffff';
+      }
+    });
+  });
+</script>
+
+<style>
+  .interactive-demo-card {
+    background-color: var(--color-secondary);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-lg);
+    margin: var(--spacing-lg) 0;
+  }
+
+  .interactive-demo-card h4 {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .demo-box {
+    height: 80px;
+    background-color: var(--color-bg);
+    border: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-bottom: var(--spacing-md);
+    transition: all 0.3s ease;
+  }
+
+  .color-selectors {
+    display: flex;
+    gap: var(--spacing-sm);
+  }
+
+  .color-btn {
+    padding: 6px 14px;
+    border: 1px solid var(--color-primary);
+    background-color: var(--color-bg);
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-family: var(--font-sans);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .color-btn:hover {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+  }
+</style>

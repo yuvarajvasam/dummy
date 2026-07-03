@@ -2,78 +2,128 @@
 import HomeLayout from '../../layouts/HomeLayout.astro';
 ---
 
-<HomeLayout title="About - Switch-Lit">
+<HomeLayout title="About - Yuvi">
   <section class="page-header">
     <div class="container">
-      <h1>Welcome to Switch-Lit.</h1>
-      <p>
-        We're thrilled to meet you here – at the beginning of an extraordinary journey into 
-        the evolution of collaborative fiction as a catalytic structure for our time.
+      <h1>Welcome to my studio.</h1>
+      <p class="intro-p">
+        I design, architect, and code high-performance web environments that bridge the gap 
+        between rigorous frontend engineering and beautiful, print-inspired layout design.
       </p>
     </div>
   </section>
 
   <section class="content-section">
     <div class="container">
-      <div class="mission-block">
-        <h2>Our mission is universal:</h2>
-        <p>
-          to manifest the collective imagination of creative writers and literary artists 
-          through the connective power of collaborative fiction, poetry, and prose.
-        </p>
-      </div>
+      <div class="philosophies-grid">
+        <div class="phil-block">
+          <h2>Core Philosophy:</h2>
+          <p>
+            To manifest clean code and rich aesthetics. I believe websites should not just be 
+            functional utilities, but immersive digital spaces that leave a lasting impression on the user.
+          </p>
+        </div>
 
-      <div class="vision-block">
-        <p>
-          We envision Switch-Lit as an infinite space in a remote corner of the Internet where 
-          the forces of your imagination can freely meet and connect with other writers towards 
-          the creation of new worlds, unimaginable by a single mind.
-        </p>
-      </div>
-
-      <div class="cta-block">
-        <p>
-          As we open this universe and community to all, we hope that you, dear Reader, will 
-          become one of its first writers. How far and wide can you take a story worth sharing 
-          (and with whom)? Where might it take all of us in the end?
-        </p>
+        <div class="phil-block">
+          <p>
+            I draw heavy inspiration from classic typography, editorial design, and early Swiss modernism, 
+            blending it with state-of-the-art web technologies like Astro, MDX, and optimized native CSS variables.
+          </p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="team-section">
-    <div class="container">
-      <h2>TEAM</h2>
-      <div class="team-grid">
-        <div class="team-member">
-          <h3>KENNETH CHU</h3>
-          <p class="location">Portland, OR (USA)</p>
-          <p class="role">Founder & Managing Editor</p>
+    <div class="container split-layout">
+      <div class="illustration-col">
+        <!-- SVG Typewriter Illustration (Styled exactly like the mockup) -->
+        <div class="typewriter-wrapper">
+          <svg viewBox="0 0 320 280" fill="none" xmlns="http://www.w3.org/2000/svg" class="typewriter-svg">
+            <!-- Carriage Paper -->
+            <rect x="70" y="30" width="180" height="90" rx="3" fill="#FFFDF9" stroke="#1C1B19" stroke-width="3.5"/>
+            <line x1="90" y1="55" x2="230" y2="55" stroke="#E3DDD3" stroke-width="2.5"/>
+            <line x1="90" y1="75" x2="210" y2="75" stroke="#E3DDD3" stroke-width="2.5"/>
+            <line x1="90" y1="95" x2="225" y2="95" stroke="#E3DDD3" stroke-width="2.5"/>
+            
+            <!-- Typing bars / mechanism details -->
+            <path d="M100 120 l20 20 h80 l20-20" stroke="#1C1B19" stroke-width="3"/>
+            <line x1="160" y1="120" x2="160" y2="140" stroke="#1C1B19" stroke-width="3"/>
+            
+            <!-- Typewriter main body (Terracotta red) -->
+            <path d="M40 140 H280 L300 230 H20 L40 140 Z" fill="#D65E4E" stroke="#1C1B19" stroke-width="3.5"/>
+            
+            <!-- Left accent curve (Teal) -->
+            <path d="M20 230 C20 210 35 195 55 195 H65 V230 H20 Z" fill="#3B93A7" stroke="#1C1B19" stroke-width="3.5"/>
+            
+            <!-- Keyboard Tray -->
+            <path d="M65 195 H255 V230 H65 Z" fill="#F2EDE2" stroke="#1C1B19" stroke-width="3"/>
+            
+            <!-- Keys -->
+            <circle cx="85" cy="210" r="7" fill="#1C1B19"/>
+            <circle cx="110" cy="210" r="7" fill="#1C1B19"/>
+            <circle cx="135" cy="210" r="7" fill="#1C1B19"/>
+            <circle cx="160" cy="210" r="7" fill="#1C1B19"/>
+            <circle cx="185" cy="210" r="7" fill="#1C1B19"/>
+            <circle cx="210" cy="210" r="7" fill="#1C1B19"/>
+            <circle cx="235" cy="210" r="7" fill="#1C1B19"/>
+            
+            <!-- Spacebar -->
+            <rect x="110" y="220" width="100" height="6" rx="3" fill="#1C1B19"/>
+          </svg>
         </div>
-        <div class="team-member">
-          <h3>DIANA ECKER</h3>
-          <p class="location">Portland, OR (USA)</p>
-          <p class="role">Founding Editor</p>
-        </div>
-        <div class="team-member">
-          <h3>JULIA KOSLOVSKAIA</h3>
-          <p class="location">Berlin (DE)</p>
-          <p class="role">Contributing Library Editor</p>
-        </div>
-        <div class="team-member">
-          <h3>STUDIO AIRPORT</h3>
-          <p class="location">Utrecht (NL)</p>
-          <p class="role">Art Direction & Design</p>
-        </div>
-        <div class="team-member">
-          <h3>SEPTEMBER DIGITAL</h3>
-          <p class="location">Utrecht (NL)</p>
-          <p class="role">Web Development</p>
-        </div>
-        <div class="team-member">
-          <h3>ROB EN ROBIN</h3>
-          <p class="location">Breda (NL)</p>
-          <p class="role">Illustrations</p>
+      </div>
+
+      <div class="skills-col">
+        <h2>SKILLS & STACK</h2>
+        <div class="skills-list">
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="category-dot dot-teal"></span>
+              <h3>LANGUAGES</h3>
+            </div>
+            <p class="skill-detail">TypeScript, Javascript, Python, HTML/CSS</p>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="category-dot dot-purple"></span>
+              <h3>FRAMEWORKS</h3>
+            </div>
+            <p class="skill-detail">Astro, React, Next.js, Svelte, Vue</p>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="category-dot dot-yellow"></span>
+              <h3>UI/UX & STYLING</h3>
+            </div>
+            <p class="skill-detail">Vanilla CSS, Tailwind, Figma, Web Design</p>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="category-dot dot-coral"></span>
+              <h3>SYSTEM ARCHITECTURE</h3>
+            </div>
+            <p class="skill-detail">Headless CMS, Content Layers, REST/GraphQL</p>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="category-dot dot-blue"></span>
+              <h3>DEV FLOWS</h3>
+            </div>
+            <p class="skill-detail">Git, CI/CD, Vite, Webpack, Vercel, Netlify</p>
+          </div>
+          
+          <div class="skill-item">
+            <div class="skill-header">
+              <span class="category-dot dot-green"></span>
+              <h3>DATABASES</h3>
+            </div>
+            <p class="skill-detail">Supabase, PostgreSQL, MongoDB, Redis</p>
+          </div>
         </div>
       </div>
     </div>
@@ -83,77 +133,126 @@ import HomeLayout from '../../layouts/HomeLayout.astro';
 <style>
   .page-header {
     padding: var(--spacing-xxl) 0 var(--spacing-xl);
+    border-bottom: 1px solid var(--color-border);
   }
 
   .page-header h1 {
     margin-bottom: var(--spacing-md);
-    max-width: 800px;
+    font-size: 3.5rem;
+    font-weight: 800;
   }
 
-  .page-header p {
+  .intro-p {
     color: var(--color-muted);
+    font-size: 1.35rem;
     max-width: 800px;
+    line-height: 1.6;
   }
 
   .content-section {
-    padding: 0 0 var(--spacing-xxl);
+    padding: var(--spacing-xl) 0 var(--spacing-xxl);
+    border-bottom: 1px solid var(--color-border);
   }
 
-  .mission-block,
-  .vision-block,
-  .cta-block {
-    max-width: 800px;
-    margin-bottom: var(--spacing-xl);
+  .philosophies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    max-width: 900px;
   }
 
-  .mission-block h2 {
+  .phil-block h2 {
+    font-size: 1.8rem;
     margin-bottom: var(--spacing-md);
   }
 
-  .content-section p {
+  .phil-block p {
     color: var(--color-muted);
-    font-size: 1.125rem;
+    font-size: 1.15rem;
+    line-height: 1.7;
   }
 
   .team-section {
-    padding: 0 0 var(--spacing-xxl);
+    padding: var(--spacing-xxl) 0;
     background-color: var(--color-secondary);
   }
 
-  .team-section h2 {
-    margin-bottom: var(--spacing-xl);
-  }
-
-  .team-grid {
+  .split-layout {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: var(--spacing-lg);
+    grid-template-columns: 1fr 1.2fr;
+    gap: var(--spacing-xxl);
+    align-items: center;
   }
 
-  .team-member {
-    padding: var(--spacing-lg);
+  .illustration-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
-  .team-member h3 {
-    margin-bottom: var(--spacing-xs);
-    font-size: 1rem;
+  .typewriter-wrapper {
+    width: 100%;
+    max-width: 320px;
   }
 
-  .team-member .location {
+  .typewriter-svg {
+    width: 100%;
+    height: auto;
+  }
+
+  .skills-col h2 {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.2em;
     color: var(--color-muted);
-    font-size: 0.875rem;
-    margin-bottom: var(--spacing-xs);
+    margin-bottom: var(--spacing-xl);
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--spacing-xs);
   }
 
-  .team-member .role {
+  .skills-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+
+  .skill-item {
+    border-bottom: 1px solid var(--color-border);
+    padding-bottom: var(--spacing-sm);
+  }
+
+  .skill-item:last-child {
+    border-bottom: none;
+  }
+
+  .skill-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+  }
+
+  .skill-header h3 {
+    font-family: var(--font-sans);
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+    margin-bottom: 0;
+    color: var(--color-text);
+  }
+
+  .skill-detail {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
     color: var(--color-muted);
-    font-size: 0.875rem;
-    font-weight: 400;
+    margin-left: 18px;
+    margin-bottom: 0;
   }
 
   @media (max-width: 768px) {
-    .team-grid {
+    .split-layout {
       grid-template-columns: 1fr;
+      gap: var(--spacing-xl);
     }
   }
 </style>

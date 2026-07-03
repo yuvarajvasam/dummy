@@ -21,7 +21,7 @@ posts.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
       <div class="posts-grid">
         {posts.map((post) => (
           <article class="post-card">
-            <a href={`/blog/${post.id}/`}>
+            <a href={`/blog/${post.id.replace(/\.(md|mdx)$/, '')}/`}>
               <div class="post-image">
                 {post.data.heroImage ? (
                   <img src={post.data.heroImage} alt={post.data.title} />

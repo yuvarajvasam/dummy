@@ -13,13 +13,16 @@ const { title, description = 'Switch-Lit - Collaborative Stories for the Collect
   <header class="header">
     <div class="container">
       <nav class="nav">
-        <a href="/" class="logo">Switch‑Lit</a>
-        <ul class="nav-links">
-          <li><a href="/start-a-story">Start a Story</a></li>
-          <li><a href="/library">Library</a></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/faq">FAQ</a></li>
-        </ul>
+        <a href="/" class="logo">Yuvi</a>
+        <div class="nav-right">
+          <ul class="nav-links">
+            <li><a href="/library">Projects</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/blog">Blog</a></li>
+            <li><a href="/faq">FAQ</a></li>
+          </ul>
+          <a href="/start-a-story" class="btn-hire">Hire Me</a>
+        </div>
       </nav>
     </div>
   </header>
@@ -33,28 +36,25 @@ const { title, description = 'Switch-Lit - Collaborative Stories for the Collect
       <div class="footer-nav">
         <a href="/">Home</a>
         <span class="divider">·</span>
-        <a href="/how-it-works">How it works</a>
-        <span class="divider">·</span>
-        <a href="/core-values">Core values</a>
-        <span class="divider">·</span>
-        <a href="/start-a-story">Start a Story</a>
-        <span class="divider">·</span>
-        <a href="/prompts">Prompts</a>
-        <span class="divider">·</span>
-        <a href="/library">Library</a>
+        <a href="/library">Projects</a>
         <span class="divider">·</span>
         <a href="/about">About</a>
         <span class="divider">·</span>
+        <a href="/blog">Blog</a>
+        <span class="divider">·</span>
         <a href="/faq">FAQ</a>
         <span class="divider">·</span>
-        <a href="/contact">Contact</a>
+        <a href="/start-a-story">Contact</a>
       </div>
-      <p class="tagline">Collaborative Stories for the Collective Imagination</p>
+      <p class="tagline">Creative Web Development & Interface Design for the Collective Imagination</p>
       <div class="footer-bottom">
-        <span>Created by Studio Esmé, ©2026 Terms & Conditions</span>
-        <span class="logo-mark">S‑L</span>
-        <a href="/newsletter">Newsletter</a>
-        <a href="/instagram">Instagram</a>
+        <span>Created by Yuvi, ©2026. All rights reserved.</span>
+        <span class="logo-mark">Y‑V</span>
+        <div class="footer-socials">
+          <a href="/newsletter" class="social-btn">Newsletter</a>
+          <a href="https://github.com" class="social-btn" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://instagram.com" class="social-btn" target="_blank" rel="noopener">Instagram</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -77,14 +77,22 @@ const { title, description = 'Switch-Lit - Collaborative Stories for the Collect
   }
 
   .logo {
-    font-size: 2rem;
-    font-weight: 700;
+    font-family: var(--font-sans);
+    font-size: 1.8rem;
+    font-weight: 800;
     color: var(--color-text);
-    letter-spacing: -0.02em;
+    letter-spacing: -0.03em;
+    text-transform: uppercase;
   }
 
   .logo:hover {
     opacity: 0.7;
+  }
+
+  .nav-right {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-xl);
   }
 
   .nav-links {
@@ -97,33 +105,58 @@ const { title, description = 'Switch-Lit - Collaborative Stories for the Collect
 
   .nav-links a {
     color: var(--color-text);
+    font-family: var(--font-sans);
     font-weight: 500;
-    font-size: 1rem;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+
+  .btn-hire {
+    background-color: var(--color-primary);
+    color: var(--color-bg);
+    padding: 8px 18px;
+    border-radius: var(--border-radius-sm);
+    font-family: var(--font-sans);
+    font-weight: 600;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+  }
+
+  .btn-hire:hover {
+    background-color: var(--color-accent);
+    color: #ffffff;
+    opacity: 1;
   }
 
   .footer {
     background-color: var(--color-footer-bg);
+    color: var(--color-footer-text);
     padding: var(--spacing-xl) 0;
     margin-top: var(--spacing-xxl);
-    border-top: 1px solid var(--color-border);
   }
 
   .footer-nav {
     display: flex;
     flex-wrap: wrap;
-    gap: var(--spacing-xs);
+    gap: var(--spacing-md);
     margin-bottom: var(--spacing-lg);
-    font-size: 0.875rem;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
   }
 
   .footer-nav a {
-    color: var(--color-text);
-    font-size: 0.875rem;
+    color: var(--color-footer-text);
+    opacity: 0.8;
   }
 
   .footer-nav a:hover {
-    text-decoration: underline;
     opacity: 1;
+    text-decoration: underline;
   }
 
   .divider {
@@ -131,56 +164,87 @@ const { title, description = 'Switch-Lit - Collaborative Stories for the Collect
   }
 
   .tagline {
-    color: var(--color-muted);
-    font-size: 0.875rem;
+    font-family: var(--font-serif);
+    font-style: italic;
+    color: var(--color-footer-text);
+    opacity: 0.7;
+    font-size: 1rem;
     margin-bottom: var(--spacing-lg);
   }
 
   .footer-bottom {
     display: flex;
     align-items: center;
-    gap: var(--spacing-lg);
-    font-size: 0.875rem;
-    color: var(--color-muted);
+    justify-content: space-between;
+    font-family: var(--font-sans);
+    font-size: 0.8rem;
+    color: var(--color-footer-text);
+    opacity: 0.9;
     flex-wrap: wrap;
-  }
-
-  .footer-bottom a {
-    color: var(--color-muted);
-    font-size: 0.875rem;
-  }
-
-  .footer-bottom a:hover {
-    text-decoration: underline;
-    opacity: 1;
+    gap: var(--spacing-lg);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: var(--spacing-lg);
   }
 
   .logo-mark {
-    font-weight: 700;
-    color: var(--color-text);
+    font-family: var(--font-sans);
+    font-weight: 900;
+    color: var(--color-footer-text);
+    border: 1.5px solid var(--color-footer-text);
+    padding: 3px 8px;
+    font-size: 0.9rem;
+    letter-spacing: 0.05em;
+  }
+
+  .footer-socials {
+    display: flex;
+    gap: var(--spacing-md);
+  }
+
+  .social-btn {
+    color: var(--color-footer-text);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 6px 14px;
+    border-radius: 30px;
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.2s ease;
+  }
+
+  .social-btn:hover {
+    border-color: var(--color-footer-text);
+    background-color: rgba(255, 255, 255, 0.05);
+    opacity: 1;
   }
 
   @media (max-width: 768px) {
     .nav {
       flex-direction: column;
       gap: var(--spacing-md);
+      align-items: flex-start;
+    }
+
+    .nav-right {
+      width: 100%;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: var(--spacing-md);
     }
 
     .nav-links {
       gap: var(--spacing-md);
-      flex-wrap: wrap;
-      justify-content: center;
     }
 
     .footer-nav {
       flex-direction: column;
-      gap: var(--spacing-xs);
+      gap: var(--spacing-sm);
     }
 
     .footer-bottom {
       flex-direction: column;
-      text-align: center;
-      gap: var(--spacing-sm);
+      align-items: flex-start;
+      gap: var(--spacing-md);
     }
   }
 </style>
