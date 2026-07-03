@@ -1,0 +1,206 @@
+---
+import HomeLayout from '../../layouts/HomeLayout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog', ({ data }) => !data.draft);
+  return posts.map((post) => ({
+    params: { slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<HomeLayout title={post.data.title}>
+  <article class="post-article">
+    <header class="post-header">
+      <div class="container">
+        <a href="/blog" class="back-link">← Back to Blog</a>
+        <h1>{post.data.title}</h1>
+        <div class="post-meta">
+          <time datetime={post.data.pubDate.toISOString()}>
+            {post.data.pubDate.toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            })}
+          </time>
+          {post.data.tags && (
+            <div class="post-tags">
+              {post.data.tags.map(tag => (
+                <span>{tag}</span>
+              ))}
+            </div>
+          )}
+        </div>
+      </div>
+    </header>
+
+    <div class="post-body container">
+      <Content />
+    </div>
+
+    <footer class="post-footer">
+      <div class="container">
+        <div class="share-section">
+          <h3>Share this article</h3>
+          <div class="share-links">
+            <a href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(post.data.title)}&url=${encodeURIComponent(Astro.url.href)}`} target="_blank" rel="noopener">Twitter</a>
+            <a href={`https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(Astro.url.href)}`} target="_blank" rel="noopener">LinkedIn</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </article>
+</HomeLayout>
+
+<style>
+  .post-article {
+    padding-bottom: var(--spacing-xl);
+  }
+
+  .post-header {
+    padding: calc(var(--spacing-xl) * 2) var(--spacing-lg) var(--spacing-xl);
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+  }
+
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .back-link {
+    display: inline-block;
+    margin-bottom: var(--spacing-lg);
+    color: var(--color-muted);
+    font-weight: 500;
+  }
+
+  .back-link:hover {
+    color: var(--color-primary);
+  }
+
+  .post-header h1 {
+    font-size: 3rem;
+    line-height: 1.2;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .post-meta {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+  }
+
+  .post-meta time {
+    color: var(--color-muted);
+    font-size: 1rem;
+  }
+
+  .post-tags {
+    display: flex;
+    gap: var(--spacing-xs);
+  }
+
+  .post-tags span {
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--color-primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+  }
+
+  .post-body {
+    padding: var(--spacing-xl) var(--spacing-lg);
+    font-size: 1.125rem;
+    line-height: 1.8;
+  }
+
+  .post-body :global(h2) {
+    margin-top: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .post-body :global(h3) {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .post-body :global(p) {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+  }
+
+  .post-body :global(ul),
+  .post-body :global(ol) {
+    margin-bottom: var(--spacing-md);
+    padding-left: var(--spacing-lg);
+  }
+
+  .post-body :global(li) {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .post-body :global(a) {
+    text-decoration: underline;
+  }
+
+  .post-body :global(blockquote) {
+    border-left: 4px solid var(--color-primary);
+    padding-left: var(--spacing-md);
+    margin: var(--spacing-md) 0;
+    font-style: italic;
+    color: var(--color-muted);
+  }
+
+  .post-footer {
+    padding: var(--spacing-xl) var(--spacing-lg);
+    border-top: 1px solid var(--color-border);
+    margin-top: var(--spacing-xl);
+  }
+
+  .share-section {
+    text-align: center;
+  }
+
+  .share-section h3 {
+    margin-bottom: var(--spacing-md);
+    font-size: 1.25rem;
+  }
+
+  .share-links {
+    display: flex;
+    justify-content: center;
+    gap: var(--spacing-md);
+  }
+
+  .share-links a {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border: 1px solid var(--color-border);
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+
+  .share-links a:hover {
+    border-color: var(--color-primary);
+    background-color: rgba(59, 130, 246, 0.1);
+  }
+
+  @media (max-width: 768px) {
+    .post-header h1 {
+      font-size: 2rem;
+    }
+
+    .post-body {
+      font-size: 1rem;
+    }
+  }
+</style>

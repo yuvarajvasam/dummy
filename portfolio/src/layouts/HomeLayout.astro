@@ -1,0 +1,125 @@
+---
+import BaseLayout from './BaseLayout.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = 'Personal portfolio website' } = Astro.props;
+---
+
+<BaseLayout title={title} description={description}>
+  <header class="header">
+    <nav class="nav">
+      <a href="/" class="logo">Your Name</a>
+      <ul class="nav-links">
+        <li><a href="/#about">About</a></li>
+        <li><a href="/#projects">Projects</a></li>
+        <li><a href="/blog">Blog</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <slot />
+  </main>
+
+  <footer class="footer">
+    <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
+    <div class="social-links">
+      <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://twitter.com/yourusername" target="_blank" rel="noopener">Twitter</a>
+    </div>
+  </footer>
+</BaseLayout>
+
+<style>
+  .header {
+    position: sticky;
+    top: 0;
+    background-color: var(--color-bg);
+    border-bottom: 1px solid var(--color-border);
+    z-index: 100;
+  }
+
+  .nav {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-md) var(--spacing-lg);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--color-text);
+  }
+
+  .logo:hover {
+    color: var(--color-primary);
+  }
+
+  .nav-links {
+    display: flex;
+    gap: var(--spacing-lg);
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-links a {
+    color: var(--color-text);
+    font-weight: 500;
+  }
+
+  .nav-links a:hover {
+    color: var(--color-primary);
+  }
+
+  main {
+    min-height: calc(100vh - 200px);
+  }
+
+  .footer {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: var(--spacing-xl) var(--spacing-lg);
+    border-top: 1px solid var(--color-border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--spacing-md);
+  }
+
+  .footer p {
+    color: var(--color-muted);
+    margin: 0;
+  }
+
+  .social-links {
+    display: flex;
+    gap: var(--spacing-md);
+  }
+
+  @media (max-width: 768px) {
+    .nav {
+      flex-direction: column;
+      gap: var(--spacing-md);
+    }
+
+    .nav-links {
+      gap: var(--spacing-md);
+    }
+
+    .footer {
+      flex-direction: column;
+      text-align: center;
+    }
+  }
+</style>
