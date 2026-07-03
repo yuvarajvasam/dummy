@@ -1,0 +1,704 @@
+/* =============================================
+   SWITCH-LIT - Global Styles
+   ============================================= */
+
+/* CSS Variables */
+:root {
+    --color-primary: #1a1a1a;
+    --color-secondary: #f5f5f5;
+    --color-accent: #000000;
+    --color-background: #ffffff;
+    --color-text: #1a1a1a;
+    --color-muted: #666666;
+    --color-border: #e0e0e0;
+    --color-footer-bg: #f8f8f8;
+    
+    --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    
+    --spacing-unit: 8px;
+    --container-max: 1200px;
+    
+    --border-radius-sm: 4px;
+    --border-radius-md: 8px;
+    --border-radius-pill: 20px;
+}
+
+/* Reset & Base */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-stack);
+    font-size: 1.125rem;
+    line-height: 1.6;
+    color: var(--color-text);
+    background-color: var(--color-background);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Container */
+.container {
+    max-width: var(--container-max);
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* Typography */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+h2 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    line-height: 1.3;
+    margin-bottom: 16px;
+}
+
+h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+    line-height: 1.4;
+    margin-bottom: 8px;
+}
+
+p {
+    margin-bottom: 16px;
+}
+
+.subhead {
+    font-size: 1.125rem;
+    color: var(--color-muted);
+    margin-bottom: 40px;
+}
+
+/* Links */
+a {
+    color: var(--color-text);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.7;
+    text-decoration: underline;
+}
+
+/* =============================================
+   Header
+   ============================================= */
+
+.site-header {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.brand-logo {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-text);
+}
+
+.brand-logo:hover {
+    opacity: 1;
+    text-decoration: none;
+}
+
+/* =============================================
+   Main Content
+   ============================================= */
+
+.page-content {
+    padding: 64px 0;
+    min-height: calc(100vh - 300px);
+}
+
+/* =============================================
+   Buttons
+   ============================================= */
+
+.btn {
+    display: inline-block;
+    padding: 10px 28px;
+    font-size: 1rem;
+    font-family: inherit;
+    font-weight: 500;
+    border: none;
+    border-radius: var(--border-radius-sm);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background-color: var(--color-accent);
+    opacity: 1;
+    text-decoration: none;
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    opacity: 1;
+    text-decoration: none;
+}
+
+/* Toggle/Pill Buttons */
+.toggle-group {
+    display: flex;
+    gap: 8px;
+}
+
+.toggle-btn {
+    padding: 10px 24px;
+    font-size: 1rem;
+    font-family: inherit;
+    font-weight: 500;
+    background-color: transparent;
+    color: var(--color-text);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-pill);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.toggle-btn:hover {
+    border-color: var(--color-primary);
+}
+
+.toggle-btn.active {
+    background-color: var(--color-primary);
+    color: #ffffff;
+    border-color: var(--color-primary);
+}
+
+/* =============================================
+   Form Elements
+   ============================================= */
+
+.form-section {
+    border: none;
+    padding: 0;
+    margin-bottom: 40px;
+}
+
+.form-section legend {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--color-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin-bottom: 16px;
+    padding: 0;
+}
+
+.form-group {
+    margin-bottom: 24px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 24px;
+    margin-bottom: 24px;
+}
+
+.question-label {
+    display: block;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+}
+
+.field-label {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.text-input {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--color-text);
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius-sm);
+    transition: outline 0.2s ease;
+}
+
+.text-input:focus {
+    outline: 2px solid var(--color-primary);
+    outline-offset: 1px;
+    border-color: var(--color-primary);
+}
+
+.text-input::placeholder {
+    color: var(--color-muted);
+}
+
+select.text-input {
+    cursor: pointer;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 400;
+    cursor: pointer;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+}
+
+.conditional-field {
+    display: none;
+}
+
+.conditional-field.visible {
+    display: block;
+}
+
+/* Proposal Review Section */
+.proposal-message {
+    background-color: var(--color-secondary);
+    padding: 24px;
+    border-radius: var(--border-radius-md);
+}
+
+.proposal-message p {
+    margin-bottom: 16px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 12px;
+}
+
+/* =============================================
+   Start Story Page
+   ============================================= */
+
+.start-story h1 {
+    text-transform: uppercase;
+}
+
+/* =============================================
+   Library Page
+   ============================================= */
+
+.library-section h1 {
+    text-transform: uppercase;
+}
+
+.featured-stories {
+    margin-bottom: 40px;
+}
+
+.featured-stories h2 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 24px;
+    color: var(--color-muted);
+}
+
+.featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+.story-card {
+    padding: 24px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    transition: border-color 0.2s ease;
+}
+
+.story-card:hover {
+    border-color: var(--color-primary);
+}
+
+.story-card h3 {
+    font-style: italic;
+    margin-bottom: 8px;
+}
+
+.story-meta {
+    font-size: 0.875rem;
+    color: var(--color-muted);
+}
+
+/* Sort Controls */
+.sort-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+}
+
+.sort-label {
+    font-weight: 600;
+}
+
+.sort-btn {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-family: inherit;
+    color: var(--color-muted);
+    cursor: pointer;
+    padding: 4px 0;
+}
+
+.sort-btn:hover {
+    color: var(--color-text);
+}
+
+.sort-btn.active {
+    color: var(--color-text);
+    text-decoration: underline;
+}
+
+/* Story Table */
+.table-container {
+    overflow-x: auto;
+}
+
+.story-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+}
+
+.story-table th,
+.story-table td {
+    padding: 16px 12px;
+    text-align: left;
+    border-bottom: 1px solid var(--color-border);
+}
+
+.story-table th {
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--color-muted);
+}
+
+.story-table td:first-child {
+    font-family: monospace;
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+}
+
+.story-table tbody tr:hover {
+    background-color: var(--color-secondary);
+}
+
+/* =============================================
+   About Page
+   ============================================= */
+
+.about-section > div {
+    margin-bottom: 32px;
+    max-width: 800px;
+}
+
+.mission-block h2 {
+    display: inline;
+}
+
+.team-section {
+    margin-top: 64px;
+}
+
+.team-section h2 {
+    margin-bottom: 32px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+}
+
+.team-member {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.member-name {
+    font-weight: 700;
+}
+
+.member-location {
+    font-size: 0.875rem;
+    color: var(--color-muted);
+}
+
+.member-role {
+    font-size: 0.875rem;
+    color: var(--color-muted);
+}
+
+/* =============================================
+   FAQ Page
+   ============================================= */
+
+.faq-section {
+    max-width: 800px;
+}
+
+.what-is-block {
+    margin-bottom: 48px;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.faq-item {
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    overflow: hidden;
+}
+
+.faq-question {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 24px;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    font-family: inherit;
+    font-weight: 600;
+    text-align: left;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.faq-question:hover {
+    background-color: var(--color-secondary);
+}
+
+.faq-icon {
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--color-muted);
+    transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-icon {
+    transform: rotate(45deg);
+}
+
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+}
+
+.faq-item.active .faq-answer {
+    max-height: 500px;
+}
+
+.faq-answer p {
+    padding: 0 24px 20px;
+    margin-bottom: 0;
+}
+
+/* =============================================
+   Footer
+   ============================================= */
+
+.site-footer {
+    background-color: var(--color-footer-bg);
+    padding: 40px 0 24px;
+    margin-top: 64px;
+}
+
+.footer-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 24px;
+    font-size: 0.875rem;
+}
+
+.footer-nav a {
+    color: var(--color-text);
+}
+
+.footer-nav .divider {
+    color: var(--color-muted);
+}
+
+.footer-tagline {
+    font-size: 0.875rem;
+    color: var(--color-muted);
+    margin-bottom: 24px;
+}
+
+.footer-bottom {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 24px;
+    font-size: 0.875rem;
+    color: var(--color-muted);
+}
+
+.footer-bottom a {
+    color: var(--color-text);
+}
+
+.logo-mark {
+    font-weight: 700;
+    color: var(--color-text);
+}
+
+/* =============================================
+   Responsive Design
+   ============================================= */
+
+/* Tablet: 768px - 1023px */
+@media (max-width: 1023px) {
+    .page-content {
+        padding: 48px 0;
+    }
+    
+    .team-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile: < 768px */
+@media (max-width: 767px) {
+    html {
+        font-size: 15px;
+    }
+    
+    .container {
+        padding: 0 16px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .page-content {
+        padding: 32px 0;
+    }
+    
+    /* Stack form rows on mobile */
+    .form-row {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+    
+    /* Stack action buttons on mobile */
+    .action-buttons {
+        flex-direction: column;
+    }
+    
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
+    
+    /* Featured grid to single column */
+    .featured-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Team grid to single column */
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Footer navigation vertical */
+    .footer-nav {
+        flex-direction: column;
+        gap: 12px;
+    }
+    
+    .footer-nav .divider {
+        display: none;
+    }
+    
+    /* Footer bottom stack */
+    .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+    
+    /* Table horizontal scroll */
+    .table-container {
+        -webkit-overflow-scrolling: touch;
+    }
+    
+    .story-table {
+        min-width: 600px;
+    }
+    
+    /* FAQ adjustments */
+    .faq-question {
+        padding: 16px;
+        font-size: 0.95rem;
+    }
+    
+    .faq-answer p {
+        padding: 0 16px 16px;
+    }
+}
+
+/* Large Desktop: > 1200px */
+@media (min-width: 1201px) {
+    .container {
+        padding: 0 40px;
+    }
+}

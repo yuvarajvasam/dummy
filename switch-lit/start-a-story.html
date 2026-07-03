@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start a New Story - Switch-Lit</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a href="index.html" class="brand-logo">Switch‑Lit</a>
+        </div>
+    </header>
+
+    <main class="page-content">
+        <div class="container">
+            <section class="start-story">
+                <h1>START A NEW STORY</h1>
+                <p class="subhead">Choose from the app settings below to customize the shape of your turn‑based collaborative story</p>
+
+                <form class="story-form">
+                    <!-- Section 1: Writing Partner -->
+                    <fieldset class="form-section">
+                        <legend>Writing Partner</legend>
+                        <div class="form-group">
+                            <label class="question-label">Do you already have a writing partner?</label>
+                            <div class="toggle-group">
+                                <button type="button" class="toggle-btn active" data-toggle="partner" data-value="yes">Yes</button>
+                                <button type="button" class="toggle-btn" data-toggle="partner" data-value="no">No</button>
+                            </div>
+                        </div>
+                        <div class="form-group conditional-field" id="partner-email-field">
+                            <label class="field-label">Invite your writing partner</label>
+                            <input type="email" class="text-input" placeholder="Email address">
+                        </div>
+                    </fieldset>
+
+                    <!-- Section 2: Story Prompt -->
+                    <fieldset class="form-section">
+                        <legend>Story Prompt (optional)</legend>
+                        <div class="form-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" checked> No prompt
+                            </label>
+                        </div>
+                    </fieldset>
+
+                    <!-- Section 3: Story Settings -->
+                    <fieldset class="form-section">
+                        <legend>Story Settings</legend>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label class="field-label">Chapters per writer</label>
+                                <input type="number" class="text-input" min="1" value="1">
+                            </div>
+                            <div class="form-group">
+                                <label class="field-label">Word limit per chapter</label>
+                                <input type="number" class="text-input" min="1" value="200">
+                            </div>
+                            <div class="form-group">
+                                <label class="field-label">Time limit per chapter (days)</label>
+                                <select class="text-input">
+                                    <option value="7" selected>7 days</option>
+                                    <option value="14">14 days</option>
+                                    <option value="30">30 days</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="question-label">Who writes the first chapter?</label>
+                            <div class="toggle-group">
+                                <button type="button" class="toggle-btn" data-toggle="first-chapter" data-value="partner">My partner</button>
+                                <button type="button" class="toggle-btn active" data-toggle="first-chapter" data-value="me">Me!</button>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Section 4: Proposal Review -->
+                    <fieldset class="form-section">
+                        <legend>Proposal Review</legend>
+                        <div class="proposal-message">
+                            <p>Please log in or create an account in order to send your story proposal to your writing partner (:</p>
+                            <div class="action-buttons">
+                                <button type="button" class="btn btn-primary">Sign up</button>
+                                <button type="button" class="btn btn-secondary">Log in</button>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <nav class="footer-nav">
+                <a href="index.html">Home</a>
+                <span class="divider">·</span>
+                <a href="#how-it-works">How it works</a>
+                <span class="divider">·</span>
+                <a href="#core-values">Core values</a>
+                <span class="divider">·</span>
+                <a href="start-a-story.html">Start a Story</a>
+                <span class="divider">·</span>
+                <a href="#prompts">Prompts</a>
+                <span class="divider">·</span>
+                <a href="library.html">Library</a>
+                <span class="divider">·</span>
+                <a href="about.html">About</a>
+                <span class="divider">·</span>
+                <a href="faq.html">FAQ</a>
+                <span class="divider">·</span>
+                <a href="#contact">Contact</a>
+            </nav>
+            <p class="footer-tagline">Collaborative Stories for the Collective Imagination</p>
+            <div class="footer-bottom">
+                <span>Created by Studio Esmé, ©2026 Terms & Conditions</span>
+                <span class="logo-mark">S‑L</span>
+                <a href="#newsletter">Newsletter</a>
+                <a href="#instagram">Instagram</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
