@@ -1,0 +1,217 @@
+---
+import HomeLayout from '../../layouts/HomeLayout.astro';
+---
+
+<HomeLayout title="Library - Switch-Lit">
+  <section class="page-header">
+    <div class="container">
+      <h1>SWITCH-LIT LIBRARY</h1>
+      <p class="subhead">Welcome to our public library of the collective imagination.</p>
+    </div>
+  </section>
+
+  <section class="featured-section">
+    <div class="container">
+      <h2>Featured stories</h2>
+      <div class="featured-grid">
+        <article class="story-card">
+          <h3>cupid's arrow hit us perfect</h3>
+          <p class="authors">written by: ... and AULANDC©</p>
+        </article>
+        <article class="story-card">
+          <h3>Grievances</h3>
+          <p class="authors">written by AYUSHAM TONI© and EMILY CHERCHILL©</p>
+        </article>
+        <article class="story-card">
+          <h3>Infinity</h3>
+          <p class="authors">written by ZIN© and MIAO©</p>
+        </article>
+        <article class="story-card">
+          <h3>Haunting from the Shadows</h3>
+          <p class="authors">written by KAIN© and ZIN©</p>
+        </article>
+        <article class="story-card">
+          <h3>Temporary Diversion</h3>
+          <p class="authors">written by JULIA GARIE© and INSPOIS©</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="table-section">
+    <div class="container">
+      <div class="sort-controls">
+        <span>Sort by:</span>
+        <div class="sort-options">
+          <button class="active" data-sort="recent">Most recent</button>
+          <button data-sort="wordcount">Word count</button>
+        </div>
+      </div>
+
+      <div class="table-wrapper">
+        <table class="stories-table">
+          <thead>
+            <tr>
+              <th>Authors</th>
+              <th>Title</th>
+              <th>Word Count</th>
+              <th>Release Date</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>○○</td><td>Under His Spell</td><td>5049</td><td>2026-06-24</td></tr>
+            <tr><td>●</td><td>Fuschia Aftermath</td><td>1190</td><td>2026-06-13</td></tr>
+            <tr><td>●</td><td>Before He Wakes</td><td>1179</td><td>2026-06-13</td></tr>
+            <tr><td>●</td><td>cupid's arrow hit us perfect</td><td>1704</td><td>2026-05-17</td></tr>
+            <tr><td>○●</td><td>Waffles, Chips & Other Robbery Necessities</td><td>983</td><td>2026-05-17</td></tr>
+            <tr><td>●</td><td>Moving In</td><td>566</td><td>2026-05-17</td></tr>
+            <tr><td>○●</td><td>Hunger</td><td>1081</td><td>2026-05-17</td></tr>
+            <tr><td>○○</td><td>Along the Rainy Avenue</td><td>596</td><td>2026-05-17</td></tr>
+            <tr><td>●</td><td>A Monument to Silence</td><td>2394</td><td>2026-05-17</td></tr>
+            <tr><td>○○</td><td>A Case for Dancing</td><td>591</td><td>2026-05-17</td></tr>
+            <tr><td>○○</td><td>The Hum in the Hollow</td><td>2800</td><td>2026-04-23</td></tr>
+            <tr><td>○○</td><td>Yearning Over Us</td><td>528</td><td>2026-04-23</td></tr>
+            <tr><td>●</td><td>Haunting from the Shadows</td><td>1223</td><td>2026-04-23</td></tr>
+            <tr><td>●</td><td>Bones in the Ocean</td><td>2698</td><td>2026-04-23</td></tr>
+            <tr><td>○○</td><td>Grievances</td><td>4130</td><td>2026-04-23</td></tr>
+            <tr><td>○○</td><td>Infinity</td><td>1657</td><td>2026-04-23</td></tr>
+            <tr><td>○○</td><td>Temporary Diversion</td><td>1190</td><td>2026-03-30</td></tr>
+            <tr><td>○○</td><td>Compliance Check</td><td>1199</td><td>2026-01-16</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+</HomeLayout>
+
+<script>
+  const sortButtons = document.querySelectorAll('.sort-options button');
+  sortButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      sortButtons.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+
+<style>
+  .page-header {
+    padding: var(--spacing-xxl) 0 var(--spacing-xl);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .subhead {
+    color: var(--color-muted);
+    font-size: 1.125rem;
+  }
+
+  .featured-section {
+    padding: 0 0 var(--spacing-xxl);
+  }
+
+  .featured-section h2 {
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .featured-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  .story-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: var(--border-radius-md);
+    padding: var(--spacing-lg);
+    transition: transform 0.2s ease;
+  }
+
+  .story-card:hover {
+    transform: translateY(-4px);
+  }
+
+  .story-card h3 {
+    font-style: italic;
+    margin-bottom: var(--spacing-sm);
+    font-size: 1.125rem;
+  }
+
+  .story-card .authors {
+    color: var(--color-muted);
+    font-size: 0.875rem;
+  }
+
+  .table-section {
+    padding: 0 0 var(--spacing-xxl);
+  }
+
+  .sort-controls {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .sort-options {
+    display: flex;
+    gap: var(--spacing-md);
+  }
+
+  .sort-options button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    color: var(--color-muted);
+    padding: 4px 0;
+  }
+
+  .sort-options button.active {
+    color: var(--color-text);
+    text-decoration: underline;
+  }
+
+  .table-wrapper {
+    overflow-x: auto;
+  }
+
+  .stories-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1rem;
+  }
+
+  .stories-table th,
+  .stories-table td {
+    text-align: left;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .stories-table th {
+    font-weight: 600;
+    color: var(--color-muted);
+    font-size: 0.875rem;
+    text-transform: uppercase;
+  }
+
+  .stories-table tbody tr:hover {
+    background-color: var(--color-secondary);
+  }
+
+  @media (max-width: 768px) {
+    .featured-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .sort-controls {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--spacing-sm);
+    }
+  }
+</style>
