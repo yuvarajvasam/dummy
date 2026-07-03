@@ -1,0 +1,377 @@
+---
+import HomeLayout from '../layouts/HomeLayout.astro';
+---
+
+<HomeLayout title="Home">
+  <section id="hero" class="hero">
+    <div class="hero-content">
+      <h1>Hi, I'm <span class="highlight">Your Name</span></h1>
+      <p class="tagline">Full Stack Developer & UI/UX Enthusiast</p>
+      <p class="description">
+        I build exceptional digital experiences that combine clean code with beautiful design.
+        Currently focused on creating accessible, performant web applications.
+      </p>
+      <div class="cta-buttons">
+        <a href="/#projects" class="btn btn-primary">View My Work</a>
+        <a href="/#contact" class="btn btn-secondary">Get In Touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="container">
+      <h2>About Me</h2>
+      <div class="about-content">
+        <p>
+          I'm a passionate developer with over 5 years of experience building web applications.
+          I specialize in modern JavaScript frameworks and have a keen eye for design.
+        </p>
+        <p>
+          When I'm not coding, you can find me writing technical articles, contributing to
+          open-source projects, or exploring new technologies.
+        </p>
+        <div class="skills">
+          <h3>Technologies I Work With</h3>
+          <ul class="skill-list">
+            <li>JavaScript / TypeScript</li>
+            <li>React / Next.js</li>
+            <li>Astro</li>
+            <li>Node.js</li>
+            <li>Python</li>
+            <li>PostgreSQL</li>
+            <li>Docker</li>
+            <li>AWS</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" class="section section-alt">
+    <div class="container">
+      <h2>Featured Projects</h2>
+      <div class="projects-grid">
+        <article class="project-card">
+          <div class="project-image">
+            <div class="placeholder-image">Project 1</div>
+          </div>
+          <div class="project-info">
+            <h3>E-Commerce Platform</h3>
+            <p>A full-featured online store built with Next.js and Stripe integration.</p>
+            <div class="project-tags">
+              <span>Next.js</span>
+              <span>TypeScript</span>
+              <span>Stripe</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank">Live Demo</a>
+              <a href="#" target="_blank">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">
+            <div class="placeholder-image">Project 2</div>
+          </div>
+          <div class="project-info">
+            <h3>Task Management App</h3>
+            <p>A collaborative task manager with real-time updates using WebSockets.</p>
+            <div class="project-tags">
+              <span>React</span>
+              <span>Node.js</span>
+              <span>Socket.io</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank">Live Demo</a>
+              <a href="#" target="_blank">Source Code</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-image">
+            <div class="placeholder-image">Project 3</div>
+          </div>
+          <div class="project-info">
+            <h3>Weather Dashboard</h3>
+            <p>A beautiful weather app with location-based forecasts and alerts.</p>
+            <div class="project-tags">
+              <span>Vue.js</span>
+              <span>Tailwind CSS</span>
+              <span>OpenWeather API</span>
+            </div>
+            <div class="project-links">
+              <a href="#" target="_blank">Live Demo</a>
+              <a href="#" target="_blank">Source Code</a>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section">
+    <div class="container">
+      <h2>Get In Touch</h2>
+      <p class="section-description">
+        I'm always open to discussing new projects, creative ideas, or opportunities to be part of your vision.
+      </p>
+      <div class="contact-methods">
+        <a href="mailto:hello@yourname.dev" class="contact-card">
+          <span class="contact-icon">📧</span>
+          <span>Email Me</span>
+        </a>
+        <a href="https://github.com/yourusername" target="_blank" class="contact-card">
+          <span class="contact-icon">💻</span>
+          <span>GitHub</span>
+        </a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank" class="contact-card">
+          <span class="contact-icon">💼</span>
+          <span>LinkedIn</span>
+        </a>
+      </div>
+    </div>
+  </section>
+</HomeLayout>
+
+<style>
+  .hero {
+    padding: calc(var(--spacing-xl) * 2) var(--spacing-lg);
+    text-align: center;
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 100%);
+  }
+
+  .hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .highlight {
+    color: var(--color-primary);
+  }
+
+  .tagline {
+    font-size: 1.5rem;
+    color: var(--color-muted);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .description {
+    font-size: 1.125rem;
+    color: var(--color-muted);
+    margin-bottom: var(--spacing-lg);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .cta-buttons {
+    display: flex;
+    gap: var(--spacing-md);
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all 0.2s ease;
+  }
+
+  .btn-primary {
+    background-color: var(--color-primary);
+    color: white;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--color-primary-hover);
+    color: white;
+  }
+
+  .btn-secondary {
+    border: 2px solid var(--color-primary);
+    color: var(--color-primary);
+  }
+
+  .btn-secondary:hover {
+    background-color: var(--color-primary);
+    color: white;
+  }
+
+  .section {
+    padding: var(--spacing-xl) var(--spacing-lg);
+  }
+
+  .section-alt {
+    background-color: rgba(125, 125, 125, 0.05);
+  }
+
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+  }
+
+  .section h2 {
+    text-align: center;
+    margin-bottom: var(--spacing-xl);
+    font-size: 2.5rem;
+  }
+
+  .section-description {
+    text-align: center;
+    color: var(--color-muted);
+    max-width: 600px;
+    margin: 0 auto var(--spacing-xl);
+  }
+
+  .about-content {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .about-content p {
+    margin-bottom: var(--spacing-md);
+    color: var(--color-muted);
+  }
+
+  .skills {
+    margin-top: var(--spacing-lg);
+  }
+
+  .skills h3 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .skill-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--spacing-sm);
+    list-style: none;
+    padding: 0;
+  }
+
+  .skill-list li {
+    background: rgba(59, 130, 246, 0.1);
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 4px;
+    text-align: center;
+    font-weight: 500;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  .project-card {
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+
+  .project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  }
+
+  .project-image {
+    height: 200px;
+    background: linear-gradient(135deg, var(--color-primary), #9333ea);
+  }
+
+  .placeholder-image {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+
+  .project-info {
+    padding: var(--spacing-lg);
+  }
+
+  .project-info h3 {
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .project-info p {
+    color: var(--color-muted);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .project-tags span {
+    background: rgba(125, 125, 125, 0.1);
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-size: 0.875rem;
+    color: var(--color-muted);
+  }
+
+  .project-links {
+    display: flex;
+    gap: var(--spacing-md);
+  }
+
+  .contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--spacing-lg);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .contact-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-lg);
+    border: 1px solid var(--color-border);
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.2s ease;
+  }
+
+  .contact-card:hover {
+    border-color: var(--color-primary);
+    transform: translateY(-2px);
+  }
+
+  .contact-icon {
+    font-size: 2rem;
+    margin-bottom: var(--spacing-sm);
+  }
+
+  @media (max-width: 768px) {
+    .hero h1 {
+      font-size: 2.5rem;
+    }
+
+    .tagline {
+      font-size: 1.25rem;
+    }
+
+    .section h2 {
+      font-size: 2rem;
+    }
+  }
+</style>
