@@ -1,0 +1,243 @@
+---
+import HomeLayout from '../../layouts/HomeLayout.astro';
+---
+
+<HomeLayout title="Start a Story - Switch-Lit">
+  <section class="page-header">
+    <div class="container">
+      <h1>START A NEW STORY</h1>
+      <p class="subhead">Choose from the app settings below to customize the shape of your turn‑based collaborative story</p>
+    </div>
+  </section>
+
+  <section class="form-section">
+    <div class="container">
+      <form class="story-form" id="storyForm">
+        <div class="form-group">
+          <label>Writing Partner</label>
+          <p class="question">Do you already have a writing partner?</p>
+          <div class="pill-toggle">
+            <button type="button" class="active" data-value="yes">Yes</button>
+            <button type="button" data-value="no">No</button>
+          </div>
+          <div class="conditional-field" id="partnerEmailField">
+            <label for="partnerEmail">Invite your writing partner</label>
+            <input type="email" id="partnerEmail" placeholder="Email address" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Story Prompt (optional)</label>
+          <div class="checkbox-wrapper">
+            <input type="checkbox" id="noPrompt" checked />
+            <label for="noPrompt">No prompt</label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Story Settings</label>
+          <div class="settings-grid">
+            <div class="field">
+              <label for="chaptersPerWriter">Chapters per writer</label>
+              <input type="number" id="chaptersPerWriter" min="1" value="1" />
+            </div>
+            <div class="field">
+              <label for="wordLimit">Word limit per chapter</label>
+              <input type="number" id="wordLimit" min="100" value="200" />
+            </div>
+            <div class="field">
+              <label for="timeLimit">Time limit per chapter (days)</label>
+              <select id="timeLimit">
+                <option value="3">3 days</option>
+                <option value="5">5 days</option>
+                <option value="7" selected>7 days</option>
+                <option value="14">14 days</option>
+                <option value="30">30 days</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Who writes the first chapter?</label>
+              <div class="pill-toggle">
+                <button type="button" data-value="partner">My partner</button>
+                <button type="button" class="active" data-value="me">Me!</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group proposal-review">
+          <label>Proposal Review</label>
+          <p class="message">Please log in or create an account in order to send your story proposal to your writing partner (:</p>
+          <div class="actions">
+            <a href="/signup" class="btn btn-primary">Sign up</a>
+            <a href="/login" class="btn btn-secondary">Log in</a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </section>
+</HomeLayout>
+
+<script>
+  // Writing partner toggle
+  const partnerButtons = document.querySelectorAll('.pill-toggle button');
+  partnerButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const parent = btn.parentElement;
+      parent.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      
+      if (parent.querySelector('[data-value="yes"]') && btn.dataset.value === 'no') {
+        document.getElementById('partnerEmailField').style.display = 'none';
+      } else if (parent.querySelector('[data-value="yes"]') && btn.dataset.value === 'yes') {
+        document.getElementById('partnerEmailField').style.display = 'block';
+      }
+    });
+  });
+
+  // First chapter toggle
+  const firstChapterButtons = document.querySelectorAll('.pill-toggle:nth-of-type(2) button');
+  firstChapterButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      const parent = btn.parentElement;
+      parent.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+    });
+  });
+</script>
+
+<style>
+  .page-header {
+    padding: var(--spacing-xxl) 0 var(--spacing-xl);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .subhead {
+    color: var(--color-muted);
+    font-size: 1.125rem;
+    max-width: 700px;
+  }
+
+  .form-section {
+    padding: 0 0 var(--spacing-xxl);
+  }
+
+  .story-form {
+    max-width: 700px;
+  }
+
+  .form-group {
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .form-group:last-of-type {
+    border-bottom: none;
+  }
+
+  .form-group > label {
+    margin-bottom: var(--spacing-md);
+    display: block;
+  }
+
+  .question {
+    margin-bottom: var(--spacing-sm);
+    font-size: 1rem;
+    color: var(--color-text);
+  }
+
+  .pill-toggle {
+    display: inline-flex;
+    margin-bottom: var(--spacing-md);
+  }
+
+  .pill-toggle button {
+    padding: 8px 20px;
+    background: white;
+    color: var(--color-muted);
+    border: 1px solid var(--color-border);
+    border-right: none;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.2s ease;
+  }
+
+  .pill-toggle button:first-child {
+    border-radius: 20px 0 0 20px;
+  }
+
+  .pill-toggle button:last-child {
+    border-radius: 0 20px 20px 0;
+    border-right: 1px solid var(--color-border);
+  }
+
+  .pill-toggle button.active {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+  }
+
+  .conditional-field {
+    margin-top: var(--spacing-md);
+  }
+
+  .conditional-field label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-muted);
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .checkbox-wrapper {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+  }
+
+  .checkbox-wrapper input[type="checkbox"] {
+    width: auto;
+    max-width: none;
+  }
+
+  .settings-grid {
+    display: grid;
+    gap: var(--spacing-lg);
+  }
+
+  .field label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-muted);
+    margin-bottom: var(--spacing-xs);
+    display: block;
+  }
+
+  .proposal-review .message {
+    color: var(--color-muted);
+    margin-bottom: var(--spacing-md);
+  }
+
+  .actions {
+    display: flex;
+    gap: var(--spacing-md);
+  }
+
+  @media (max-width: 768px) {
+    .settings-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .actions {
+      flex-direction: column;
+    }
+
+    .actions .btn {
+      width: 100%;
+      text-align: center;
+    }
+  }
+</style>

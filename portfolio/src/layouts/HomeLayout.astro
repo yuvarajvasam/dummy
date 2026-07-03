@@ -6,20 +6,22 @@ interface Props {
   description?: string;
 }
 
-const { title, description = 'Personal portfolio website' } = Astro.props;
+const { title, description = 'Switch-Lit - Collaborative Stories for the Collective Imagination' } = Astro.props;
 ---
 
 <BaseLayout title={title} description={description}>
   <header class="header">
-    <nav class="nav">
-      <a href="/" class="logo">Your Name</a>
-      <ul class="nav-links">
-        <li><a href="/#about">About</a></li>
-        <li><a href="/#projects">Projects</a></li>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/#contact">Contact</a></li>
-      </ul>
-    </nav>
+    <div class="container">
+      <nav class="nav">
+        <a href="/" class="logo">Switch‑Lit</a>
+        <ul class="nav-links">
+          <li><a href="/start-a-story">Start a Story</a></li>
+          <li><a href="/library">Library</a></li>
+          <li><a href="/about">About</a></li>
+          <li><a href="/faq">FAQ</a></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
   <main>
@@ -27,11 +29,33 @@ const { title, description = 'Personal portfolio website' } = Astro.props;
   </main>
 
   <footer class="footer">
-    <p>&copy; {new Date().getFullYear()} Your Name. All rights reserved.</p>
-    <div class="social-links">
-      <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://twitter.com/yourusername" target="_blank" rel="noopener">Twitter</a>
+    <div class="container">
+      <div class="footer-nav">
+        <a href="/">Home</a>
+        <span class="divider">·</span>
+        <a href="/how-it-works">How it works</a>
+        <span class="divider">·</span>
+        <a href="/core-values">Core values</a>
+        <span class="divider">·</span>
+        <a href="/start-a-story">Start a Story</a>
+        <span class="divider">·</span>
+        <a href="/prompts">Prompts</a>
+        <span class="divider">·</span>
+        <a href="/library">Library</a>
+        <span class="divider">·</span>
+        <a href="/about">About</a>
+        <span class="divider">·</span>
+        <a href="/faq">FAQ</a>
+        <span class="divider">·</span>
+        <a href="/contact">Contact</a>
+      </div>
+      <p class="tagline">Collaborative Stories for the Collective Imagination</p>
+      <div class="footer-bottom">
+        <span>Created by Studio Esmé, ©2026 Terms & Conditions</span>
+        <span class="logo-mark">S‑L</span>
+        <a href="/newsletter">Newsletter</a>
+        <a href="/instagram">Instagram</a>
+      </div>
     </div>
   </footer>
 </BaseLayout>
@@ -46,22 +70,21 @@ const { title, description = 'Personal portfolio website' } = Astro.props;
   }
 
   .nav {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: var(--spacing-md) var(--spacing-lg);
+    padding: var(--spacing-md) 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
   .logo {
-    font-size: 1.5rem;
+    font-size: 2rem;
     font-weight: 700;
     color: var(--color-text);
+    letter-spacing: -0.02em;
   }
 
   .logo:hover {
-    color: var(--color-primary);
+    opacity: 0.7;
   }
 
   .nav-links {
@@ -75,36 +98,66 @@ const { title, description = 'Personal portfolio website' } = Astro.props;
   .nav-links a {
     color: var(--color-text);
     font-weight: 500;
-  }
-
-  .nav-links a:hover {
-    color: var(--color-primary);
-  }
-
-  main {
-    min-height: calc(100vh - 200px);
+    font-size: 1rem;
   }
 
   .footer {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: var(--spacing-xl) var(--spacing-lg);
+    background-color: var(--color-footer-bg);
+    padding: var(--spacing-xl) 0;
+    margin-top: var(--spacing-xxl);
     border-top: 1px solid var(--color-border);
+  }
+
+  .footer-nav {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
     flex-wrap: wrap;
-    gap: var(--spacing-md);
+    gap: var(--spacing-xs);
+    margin-bottom: var(--spacing-lg);
+    font-size: 0.875rem;
   }
 
-  .footer p {
+  .footer-nav a {
+    color: var(--color-text);
+    font-size: 0.875rem;
+  }
+
+  .footer-nav a:hover {
+    text-decoration: underline;
+    opacity: 1;
+  }
+
+  .divider {
     color: var(--color-muted);
-    margin: 0;
   }
 
-  .social-links {
+  .tagline {
+    color: var(--color-muted);
+    font-size: 0.875rem;
+    margin-bottom: var(--spacing-lg);
+  }
+
+  .footer-bottom {
     display: flex;
-    gap: var(--spacing-md);
+    align-items: center;
+    gap: var(--spacing-lg);
+    font-size: 0.875rem;
+    color: var(--color-muted);
+    flex-wrap: wrap;
+  }
+
+  .footer-bottom a {
+    color: var(--color-muted);
+    font-size: 0.875rem;
+  }
+
+  .footer-bottom a:hover {
+    text-decoration: underline;
+    opacity: 1;
+  }
+
+  .logo-mark {
+    font-weight: 700;
+    color: var(--color-text);
   }
 
   @media (max-width: 768px) {
@@ -115,11 +168,19 @@ const { title, description = 'Personal portfolio website' } = Astro.props;
 
     .nav-links {
       gap: var(--spacing-md);
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
-    .footer {
+    .footer-nav {
+      flex-direction: column;
+      gap: var(--spacing-xs);
+    }
+
+    .footer-bottom {
       flex-direction: column;
       text-align: center;
+      gap: var(--spacing-sm);
     }
   }
 </style>

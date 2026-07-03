@@ -1,0 +1,159 @@
+---
+import HomeLayout from '../../layouts/HomeLayout.astro';
+---
+
+<HomeLayout title="About - Switch-Lit">
+  <section class="page-header">
+    <div class="container">
+      <h1>Welcome to Switch-Lit.</h1>
+      <p>
+        We're thrilled to meet you here – at the beginning of an extraordinary journey into 
+        the evolution of collaborative fiction as a catalytic structure for our time.
+      </p>
+    </div>
+  </section>
+
+  <section class="content-section">
+    <div class="container">
+      <div class="mission-block">
+        <h2>Our mission is universal:</h2>
+        <p>
+          to manifest the collective imagination of creative writers and literary artists 
+          through the connective power of collaborative fiction, poetry, and prose.
+        </p>
+      </div>
+
+      <div class="vision-block">
+        <p>
+          We envision Switch-Lit as an infinite space in a remote corner of the Internet where 
+          the forces of your imagination can freely meet and connect with other writers towards 
+          the creation of new worlds, unimaginable by a single mind.
+        </p>
+      </div>
+
+      <div class="cta-block">
+        <p>
+          As we open this universe and community to all, we hope that you, dear Reader, will 
+          become one of its first writers. How far and wide can you take a story worth sharing 
+          (and with whom)? Where might it take all of us in the end?
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="team-section">
+    <div class="container">
+      <h2>TEAM</h2>
+      <div class="team-grid">
+        <div class="team-member">
+          <h3>KENNETH CHU</h3>
+          <p class="location">Portland, OR (USA)</p>
+          <p class="role">Founder & Managing Editor</p>
+        </div>
+        <div class="team-member">
+          <h3>DIANA ECKER</h3>
+          <p class="location">Portland, OR (USA)</p>
+          <p class="role">Founding Editor</p>
+        </div>
+        <div class="team-member">
+          <h3>JULIA KOSLOVSKAIA</h3>
+          <p class="location">Berlin (DE)</p>
+          <p class="role">Contributing Library Editor</p>
+        </div>
+        <div class="team-member">
+          <h3>STUDIO AIRPORT</h3>
+          <p class="location">Utrecht (NL)</p>
+          <p class="role">Art Direction & Design</p>
+        </div>
+        <div class="team-member">
+          <h3>SEPTEMBER DIGITAL</h3>
+          <p class="location">Utrecht (NL)</p>
+          <p class="role">Web Development</p>
+        </div>
+        <div class="team-member">
+          <h3>ROB EN ROBIN</h3>
+          <p class="location">Breda (NL)</p>
+          <p class="role">Illustrations</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</HomeLayout>
+
+<style>
+  .page-header {
+    padding: var(--spacing-xxl) 0 var(--spacing-xl);
+  }
+
+  .page-header h1 {
+    margin-bottom: var(--spacing-md);
+    max-width: 800px;
+  }
+
+  .page-header p {
+    color: var(--color-muted);
+    max-width: 800px;
+  }
+
+  .content-section {
+    padding: 0 0 var(--spacing-xxl);
+  }
+
+  .mission-block,
+  .vision-block,
+  .cta-block {
+    max-width: 800px;
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .mission-block h2 {
+    margin-bottom: var(--spacing-md);
+  }
+
+  .content-section p {
+    color: var(--color-muted);
+    font-size: 1.125rem;
+  }
+
+  .team-section {
+    padding: 0 0 var(--spacing-xxl);
+    background-color: var(--color-secondary);
+  }
+
+  .team-section h2 {
+    margin-bottom: var(--spacing-xl);
+  }
+
+  .team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-lg);
+  }
+
+  .team-member {
+    padding: var(--spacing-lg);
+  }
+
+  .team-member h3 {
+    margin-bottom: var(--spacing-xs);
+    font-size: 1rem;
+  }
+
+  .team-member .location {
+    color: var(--color-muted);
+    font-size: 0.875rem;
+    margin-bottom: var(--spacing-xs);
+  }
+
+  .team-member .role {
+    color: var(--color-muted);
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+
+  @media (max-width: 768px) {
+    .team-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
